@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Cliente</title>
+    <link rel="stylesheet" href="estilos/RegristosFisico.css">
+</head>
+<body>
+<div class="cabeza">
+    <div class="img">
+        <img src="img/logo.png" alt="Logo" class="logo">
+    </div>
+    <div class="navbar">
+        <button onclick="location.href='index.html'" class="nav-button">CONSULTA</button>
+        <button onclick="location.href='index.html'" class="nav-button">DESCARGA</button>
+        <button onclick="location.href='index.html'" class="nav-button">LOGIN</button>
+    </div>
+
+</div>
+<div class="form-container">
+    <div class="formulario">
+        <h2>Registro de Cliente</h2>
+        <form action="procesar_registro.php" method="POST">
+            <label for="no_cliente">No. Cliente:</label>
+            <input type="text" id="no_cliente" name="no_cliente">
+
+            <label for="primer_nombre">Primer Nombre:</label>
+            <input type="text" id="primer_nombre" name="primer_nombre">
+
+            <label for="segundo_nombre">Segundo Nombre:</label>
+            <input type="text" id="segundo_nombre" name="segundo_nombre">
+
+            <label for="tercer_nombre">Tercer Nombre:</label>
+            <input type="text" id="tercer_nombre" name="tercer_nombre">
+
+            <label for="apellido_paterno">Apellido Paterno:</label>
+            <input type="text" id="apellido_paterno" name="apellido_paterno">
+
+            <label for="apellido_materno">Apellido Materno:</label>
+            <input type="text" id="apellido_materno" name="apellido_materno">
+
+            <label for="direccion1">Dirección 1:</label>
+            <input type="text" id="direccion1" name="direccion1">
+
+            <label for="direccion2">Dirección 2:</label>
+            <input type="text" id="direccion2" name="direccion2">
+
+            <label for="rfc">RFC:</label>
+            <input type="text" id="rfc" name="rfc">
+
+            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento">
+
+            <label for="ciudad">Ciudad:</label>
+            <input type="text" id="ciudad" name="ciudad">
+
+            <label for="estado">Estado:</label>
+            <input type="text" id="estado" name="estado">
+
+            <label for="pais">País:</label>
+            <input type="text" id="pais" name="pais">
+
+            <label for="sexo">Sexo:</label>
+            <select id="sexo" name="sexo">
+                <option value="">Selecciona</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+                <option value="otro">Otro</option>
+            </select>
+
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad">
+
+            <label for="telefono1">Teléfono 1:</label>
+            <input type="tel" id="telefono1" name="telefono1">
+
+            <label for="telefono2">Teléfono 2:</label>
+            <input type="tel" id="telefono2" name="telefono2">
+
+            <label for="curp">CURP:</label>
+            <input type="text" id="curp" name="curp">
+
+            <label for="actividad_economica">Actividad Económica:</label>
+            <input type="text" id="actividad_economica" name="actividad_economica">
+
+            <label for="ingresos_mensuales">Ingresos Mensuales:</label>
+            <input type="number" id="ingresos_mensuales" name="ingresos_mensuales">
+
+            <label for="estatus_padron">Estatus en el Padrón:</label>
+            <input type="text" id="estatus_padron" name="estatus_padron">
+
+            <label for="nombre_comercial">Nombre Comercial:</label>
+            <input type="text" id="nombre_comercial" name="nombre_comercial">
+
+            <label for="fecha_inicio">Fecha de Inicio de Operaciones:</label>
+            <input type="date" id="fecha_inicio" name="fecha_inicio">
+
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+</div>
+<div class="footer">
+    <footer>
+        <center><p>:: 2024 :: DESPACHO ::</p></center>
+    </footer>
+</div>
+</body>
+</html>
+
+

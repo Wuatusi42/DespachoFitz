@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Rubik", sans-serif;
+}
+.logo {
+text-align: right;
+    width: 150px; /* Ajusta el ancho según lo que necesites */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Asegura que la imagen esté en su propia línea */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+.top-right-image {
+    position: absolute; /* Posiciona la imagen de manera absoluta */
+    top: 10px; /* Espacio desde la parte superior */
+    right: 10px; /* Espacio desde la derecha */
+    z-index: 1000; /* Asegura que la imagen esté encima de otros elementos */
+}
+label{
+    text-align: left;
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+.container{
+
+    width: 50%;
+    height: 100%;
+}
+footer {
+    background-color: #004a75;
+    color: #fff;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 0.9em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+body {
+    display: flex;
+
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #fff;
+}
+h2 {
+    font-size: 1.2em;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+ #loginBoton{
+    width: 50%;
+    padding: 10px;
+    background-color: #004a75;
+    color: #fff;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: bold;
+}
+label {
+    align-self: flex-start;
+    font-size: 0.8em;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 50%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #000;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+
+label{
+    font-family: "Rubik", sans-serif;
+}
+.carrusel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carrusel-imagenes {
+    display: flex;
+    width: 400%;
+    animation: deslizar 35s infinite;
+}
+
+.carrusel-imagenes img {
+    width: 25%;
+    height: auto;
+}
+
+@keyframes deslizar {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(-25%); }
+    40% { transform: translateX(-50%); }
+    60% { transform: translateX(-75%); }
+    80% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+}
+.modal{
+ display: none;
+}
+#fisicas{
+ width: 50%;
+    padding: 5px;
+    background-color: #004a75;
+    color: #fff;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: bold;
+}
+#moral{
+ width: 50%;
+    padding: 5px;
+    background-color: #004a75;
+    color: #fff;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+

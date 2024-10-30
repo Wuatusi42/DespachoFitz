@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login - Fitz & Cruz</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos/styles.css">
+    <style>
+        /* Estilos para el modal */
+        .modal {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            z-index: 1; /* Sitúa el modal por encima */
+            left: 0;
+            top: 0;
+            width: 100%; /* Ancho completo */
+            height: 100%; /* Alto completo */
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: 15% auto; /* 15% desde el top y centrado */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px; /* Ancho del contenido */
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="carrusel">
+    <div class="carrusel-imagenes">
+        <img src="img/img1.jpg" alt="Imagen 1">
+        <img src="img/img2.jpg" alt="Imagen 2">
+        <img src="img/img4.jpg" alt="Imagen 3">
+        <img src="img/pedido-6168.jpg" alt="Imagen 4">
+    </div>
+</div>
+<div class="container">
+    <br>
+    <br>
+    <div>
+        <img src="img/logo.png" class="logo" alt="Logo">
+        <center> <h2>BIENVENIDO AL DESPACHO<br>FITZ Y CRUZ</h2></center>
+    </div>
+    <div class="login">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <form onsubmit="return false;"> <!-- Previene el envío del formulario -->
+            <center>
+                <label for="nombre"> Nombre de usuario </label>
+                <br>
+                <br>
+                <input type="text" id="nombre" name="nombre" required placeholder="Nombre de usuario">
+                <br>
+                <label for="password">Password</label>
+                <br>
+                <br>
+                <div>
+                    <input type="password" id="password" name="password" required placeholder="password">
+                    <br>
+                    <button type="button" id="togglePassword" class="toggle-password">👁️</button>
+                </div>
+                <br>
+                <button type="button" id="loginBoton">LOGIN</button> <!-- Cambiar a type="button" -->
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <br>
+                        <h5>ELIGA CON QUE TIPO DE PERSONA VA A TRABAJAR</h5>
+                        <button class="loginBoton" onclick="option1()" id="fisicas">FISICA</button>
+                        <button class="loginBoton" onclick="option2()" id="moral">MORAL</button>
+                    </div>
+                </div>
+            </center>
+        </form>
+    </div>
+</div>
+<footer>
+    <center><p>:: 2024 :: DESPACHO ::</p></center>
+</footer>
+<script>
+    const passwordInput = document.getElementById('password');
+    const togglePasswordButton = document.getElementById('togglePassword');
+
+    togglePasswordButton.addEventListener('click', function () {
+        const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+        passwordInput.setAttribute('type', type);
+
+        // Cambia el icono del botón
+        this.textContent = type === 'password' ? '👁️' : '🚫';
+    });
+
+    // Abre el modal al presionar el botón LOGIN, si ambos campos están llenos
+    document.getElementById('loginBoton').onclick = function() {
+        const nombre = document.getElementById('nombre').value;
+        const password = document.getElementById('password').value;
+
+        if (nombre && password) { // Verifica que ambos campos no estén vacíos
+            document.getElementById('myModal').style.display = "block"; // Muestra el modal
+        } else {
+            alert('Por favor, completa ambos campos.'); // Alerta si algún campo está vacío
+        }
+    }
+
+    // Cierra el modal
+    function closeModal() {
+        document.getElementById('myModal').style.display = "none"; // Oculta el modal
+    }
+
+
+
+    // Cerrar el modal si el usuario hace clic fuera de él
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('myModal')) {
+            closeModal();
+        }
+    }
+</script>
+</body>
+</html>
+
+
+
