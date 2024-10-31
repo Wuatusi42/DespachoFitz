@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalles</title>
+    <link rel="stylesheet" href="estilos/DetallesFisica.css">
+</head>
+<body>
+<div class="cabeza">
+    <nav class="navbar">
+        <ul>
+            <li><a href="../ConsultaFisicos.html" class="nav-button">CONSULTA</a></li>
+            <li><a href="index.html" class="nav-button">DESCARGA</a></li>
+            <li><a href="RegristroFisicas.html" class="nav-button">REGISTRA</a></li>
+            <li><a href="index.html" class="nav-button">LOGIN</a></li>
+        </ul>
+    </nav>
+</div>
+<form class="form">
+    <div class="row">
+        <label>No.Cliente</label>
+        <input type="text" th:value="${cliente.no_cliente}">
+        <label>Primer Nombre</label>
+        <input type="text" th:value="${cliente.primer_nombre}">
+        <label>Segundo Nombre</label>
+        <input type="text" th:value="${cliente.segundo_nombre}">
+        <label>Tercer Nombre (Opcional)</label>
+        <input type="text" th:value="${cliente.tercer_nombre}">
+        <label>Apellido Paterno</label>
+        <input type="text" th:value="${cliente.apellido_paterno}">
+        <label>Apellido Materno</label>
+        <input type="text" th:value="${cliente.apellido_materno}">
+    </div>
+    <div class="row">
+        <label>Direccion No.1</label>
+        <input type="text" class="full-width" th:value="${cliente.direccion1}">
+        <label>RFC</label>
+        <input type="text" th:value="${cliente.rfc}">
+    </div>
+    <div class="row">
+        <label>Direccion No.2</label>
+        <input type="text" class="full-width" th:value="${cliente.direccion2}">
+        <label>Fecha De Nacimiento</label>
+        <input type="text" th:value="${cliente.fecha_nacimiento}">
+    </div>
+    <div class="row">
+        <label>Ciudad</label>
+        <input type="text" th:value="${cliente.ciudad}">
+        <label>Estado</label>
+        <input type="text" th:value="${cliente.estado}">
+        <label>Pais</label>
+        <input type="text" th:value="${cliente.pais}">
+        <label>Sexo</label>
+        <input type="text" th:value="${cliente.sexo}">
+        <label>Edad</label>
+        <input type="text" th:value="${cliente.edad}">
+    </div>
+    <div class="row">
+        <label>Telefono No.1</label>
+        <input type="text" th:value="${cliente.telefono1}">
+        <label>Telefono No.2</label>
+        <input type="text" th:value="${cliente.telefono2}">
+        <label>Regimen</label>
+        <input type="text" th:value="${cliente.regimen}">
+    </div>
+    <div class="row">
+        <label>CURP</label>
+        <input type="text" th:value="${cliente.curp}">
+        <label>Actividad Economica</label>
+        <input type="text" th:value="${cliente.actividad_economica}">
+        <label>Ingresos Mensuales</label>
+        <input type="text" th:value="${cliente.ingresos_mensuales}">
+        <label>Estatus en el padron</label>
+        <input type="text" th:value="${cliente.estatus_padron}">
+    </div>
+    <div class="row">
+        <label>Nombre Comercial</label>
+        <input type="text" class="full-width" th:value="${cliente.nombre_comercial}">
+    </div>
+    <div class="row">
+        <label>Fecha inicio de operaciones</label>
+        <input type="text" th:value="${cliente.fecha_inicio_operaciones}">
+    </div>
+</form>
+<div class="footer">
+    <footer>
+        <center><p>:: 2024 :: DESPACHO ::</p></center>
+    </footer>
+</div>
+</body>
+</html>

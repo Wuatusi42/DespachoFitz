@@ -1,0 +1,101 @@
+.navbar {
+    background-color: #ffffff; /* Color de fondo */
+    overflow: hidden;
+    position: fixed; /* Mantenerlo en la parte superior al hacer scroll */
+    width: 100%;
+    top: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+}
+
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around; /* Espaciado uniforme */
+}
+
+.nav-button {
+    display: block;
+    background-color: transparent;
+    border: none;
+    color: #333; /* Color de texto por defecto */
+    text-align: center;
+    padding: 15px 25px; /* Espaciado interno */
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px; /* Tamaño de fuente */
+    font-weight: bold; /* Resaltar el texto */
+    transition: background-color 0.3s, color 0.3s, transform 0.2s, border-bottom 0.3s; /* Transiciones suaves */
+    position: relative; /* Para efectos de pseudo-elementos */
+}
+
+.nav-button::after {
+    content: ""; /* Crear un efecto de línea bajo el texto */
+    display: block;
+    height: 2px; /* Altura de la línea */
+    background-color: #203890; /* Color de la línea */
+    width: 0; /* Ancho inicial */
+    transition: width 0.3s; /* Transición suave */
+    position: absolute;
+    left: 50%;
+    bottom: 0; /* Posición debajo del botón */
+    transform: translateX(-50%); /* Centrar la línea */
+}
+
+.nav-button:hover {
+    color: #fff; /* Cambiar color de texto al pasar el mouse */
+    background-color: #203890; /* Color de fondo al pasar el mouse */
+    transform: scale(1.05); /* Efecto de aumento */
+}
+
+.nav-button:hover::after {
+    width: 100%; /* Ampliar la línea al pasar el mouse */
+}
+
+.nav-button:focus {
+    outline: none; /* Eliminar contorno de enfoque */
+}
+
+
+footer {
+    background-color: #004a75;
+    color: #fff;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 0.9em;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.form {
+    max-height: 80vh;
+    overflow-y: auto;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.form input,
+.form select {
+    width: calc(16% - 20px);
+    padding: 5px;
+    margin: 10px 10px 10px 0;
+    border: none;
+    border-bottom: 2px solid #afb1b9;
+    border-radius: 0;
+    background-color: transparent;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+

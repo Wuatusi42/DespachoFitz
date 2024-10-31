@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="static/estilos/Consulta.css">
+    <title>Consulta cuenta</title>
+</head>
+<body>
+<div class="cabeza">
+    <nav class="navbar">
+        <ul>
+            <li><a href="ConsultaFisicos.html" class="nav-button">CONSULTA</a></li>
+            <li><a href="static/index.html" class="nav-button">DESCARGA</a></li>
+            <li><a href="static/RegristroFisicas.html" class="nav-button">REGISTRA</a></li>
+            <li><a href="static/index.html" class="nav-button">LOGIN</a></li>
+        </ul>
+    </nav>
+    <div class="img">
+        <img src="static/img/logo.png" alt="Logo" class="logo">
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div class="form-container">
+    <div class="formulario">
+        <form>
+            <fieldset>
+                <legend>CONSULTA CUENTA PERSONA FISICA</legend>
+                <br>
+                <br>
+                <input type="text" id="primer_nombre" name="primer_nombre" placeholder="Primer Nombre" required>
+                <input type="text" id="rfc" name="rfc" placeholder="RFC" required>
+                <select id="sexo" name="sexo" required>
+                    <option value="">Selecciona Sexo</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                </select>
+                <br>
+                <br>
+                <br>
+                <center><button type="submit">Buscar</button></center>
+            </fieldset>
+        </form>
+        <br>
+        <table>
+            <thead>
+            <tr>
+                <th>No.Usuario</th>
+                <th>Nombre Completo</th>
+                <th>RFC</th>
+                <th>Regimen</th>
+                <th>Situacion Bancaria</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td></td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> </td>
+            </tr>
+            </tbody>
+        </table>
+        <br>
+        <button type="submit">Mas Detalles</button>
+    </div>
+</div>
+<div class="footer">
+    <footer>
+        <center><p>:: 2024 :: DESPACHO ::</p></center>
+    </footer>
+</div>
+</body>
+</html>

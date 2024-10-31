@@ -37,38 +37,66 @@ footer {
     width: 125px;
     height: auto;
 }
-
 .navbar {
-    background-color: white;
+    background-color: #ffffff; /* Color de fondo */
     overflow: hidden;
-    position: absolute;
+    position: fixed; /* Mantenerlo en la parte superior al hacer scroll */
     width: 100%;
     top: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
 }
+
 .navbar ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
     display: flex;
+    justify-content: space-around; /* Espaciado uniforme */
 }
 
 .nav-button {
-    float: left;
     display: block;
     background-color: transparent;
     border: none;
-    color: rgb(0, 0, 0);
+    color: #333; /* Color de texto por defecto */
     text-align: center;
-    padding: 20px 20px;
+    padding: 15px 25px; /* Espaciado interno */
     cursor: pointer;
-    font-size: inherit;
-    transition: background-color 0.3s, color 0.3s;
+    text-decoration: none;
+    font-size: 16px; /* Tamaño de fuente */
+    font-weight: bold; /* Resaltar el texto */
+    transition: background-color 0.3s, color 0.3s, transform 0.2s, border-bottom 0.3s; /* Transiciones suaves */
+    position: relative; /* Para efectos de pseudo-elementos */
+}
+
+.nav-button::after {
+    content: ""; /* Crear un efecto de línea bajo el texto */
+    display: block;
+    height: 2px; /* Altura de la línea */
+    background-color: #203890; /* Color de la línea */
+    width: 0; /* Ancho inicial */
+    transition: width 0.3s; /* Transición suave */
+    position: absolute;
+    left: 50%;
+    bottom: 0; /* Posición debajo del botón */
+    transform: translateX(-50%); /* Centrar la línea */
 }
 
 .nav-button:hover {
-    background-color: #203890;
-    color: black;
+    color: #fff; /* Cambiar color de texto al pasar el mouse */
+    background-color: #203890; /* Color de fondo al pasar el mouse */
+    transform: scale(1.05); /* Efecto de aumento */
 }
+
+.nav-button:hover::after {
+    width: 100%; /* Ampliar la línea al pasar el mouse */
+}
+
+.nav-button:focus {
+    outline: none; /* Eliminar contorno de enfoque */
+}
+
 
 .form-container {
     max-height: 80vh;
