@@ -22,81 +22,63 @@
     <div class="formulario">
         <h2>Registro de Cliente</h2>
         <form action="procesar_registro.php" method="POST">
-            <label for="no_cliente">No. Cliente:</label>
-            <input type="text" id="no_cliente" name="no_cliente">
+            <fieldset>
+                <legend>Información del Cliente</legend>
 
-            <label for="primer_nombre">Primer Nombre:</label>
-            <input type="text" id="primer_nombre" name="primer_nombre">
+                <input type="text" id="no_cliente" name="no_cliente" placeholder="No. Cliente" required>
 
-            <label for="segundo_nombre">Segundo Nombre:</label>
-            <input type="text" id="segundo_nombre" name="segundo_nombre">
+                <input type="text" id="primer_nombre" name="primer_nombre" placeholder="Primer Nombre" required>
 
-            <label for="tercer_nombre">Tercer Nombre:</label>
-            <input type="text" id="tercer_nombre" name="tercer_nombre">
+                <input type="text" id="segundo_nombre" name="segundo_nombre" placeholder="Segundo Nombre">
 
-            <label for="apellido_paterno">Apellido Paterno:</label>
-            <input type="text" id="apellido_paterno" name="apellido_paterno">
+                <input type="text" id="tercer_nombre" name="tercer_nombre" placeholder="Tercer Nombre">
 
-            <label for="apellido_materno">Apellido Materno:</label>
-            <input type="text" id="apellido_materno" name="apellido_materno">
+                <input type="text" id="apellido_paterno" name="apellido_paterno" placeholder="Apellido Paterno" required>
 
-            <label for="direccion1">Dirección 1:</label>
-            <input type="text" id="direccion1" name="direccion1">
+                <input type="text" id="apellido_materno" name="apellido_materno" placeholder="Apellido Materno">
 
-            <label for="direccion2">Dirección 2:</label>
-            <input type="text" id="direccion2" name="direccion2">
+                <input type="text" id="direccion1" name="direccion1" placeholder="Dirección 1" required>
 
-            <label for="rfc">RFC:</label>
-            <input type="text" id="rfc" name="rfc">
+                <input type="text" id="direccion2" name="direccion2" placeholder="Dirección 2">
 
-            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
-            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento">
+                <input type="text" id="rfc" name="rfc" placeholder="RFC" required>
+                <label>Fecha de Nacimiento</label>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" placeholder="Fecha de Nacimiento" required>
 
-            <label for="ciudad">Ciudad:</label>
-            <input type="text" id="ciudad" name="ciudad">
+                <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad" required>
 
-            <label for="estado">Estado:</label>
-            <input type="text" id="estado" name="estado">
+                <input type="text" id="estado" name="estado" placeholder="Estado" required>
 
-            <label for="pais">País:</label>
-            <input type="text" id="pais" name="pais">
+                <input type="text" id="pais" name="pais" placeholder="País" required>
 
-            <label for="sexo">Sexo:</label>
-            <select id="sexo" name="sexo">
-                <option value="">Selecciona</option>
-                <option value="masculino">Masculino</option>
-                <option value="femenino">Femenino</option>
-                <option value="otro">Otro</option>
-            </select>
+                <select id="sexo" name="sexo" required>
+                    <option value="">Selecciona Sexo</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                </select>
 
-            <label for="edad">Edad:</label>
-            <input type="number" id="edad" name="edad">
+                <input type="number" id="edad" name="edad" placeholder="Edad" required>
 
-            <label for="telefono1">Teléfono 1:</label>
-            <input type="tel" id="telefono1" name="telefono1">
+                <input type="tel" id="telefono1" name="telefono1" placeholder="Teléfono 1" required>
 
-            <label for="telefono2">Teléfono 2:</label>
-            <input type="tel" id="telefono2" name="telefono2">
+                <input type="tel" id="telefono2" name="telefono2" placeholder="Teléfono 2">
 
-            <label for="curp">CURP:</label>
-            <input type="text" id="curp" name="curp">
+                <input type="text" id="curp" name="curp" placeholder="CURP" required>
 
-            <label for="actividad_economica">Actividad Económica:</label>
-            <input type="text" id="actividad_economica" name="actividad_economica">
+                <input type="text" id="actividad_economica" name="actividad_economica" placeholder="Actividad Económica" required>
 
-            <label for="ingresos_mensuales">Ingresos Mensuales:</label>
-            <input type="number" id="ingresos_mensuales" name="ingresos_mensuales">
+                <input type="number" id="ingresos_mensuales" name="ingresos_mensuales" placeholder="Ingresos Mensuales" required>
 
-            <label for="estatus_padron">Estatus en el Padrón:</label>
-            <input type="text" id="estatus_padron" name="estatus_padron">
+                <input type="text" id="estatus_padron" name="estatus_padron" placeholder="Estatus en el Padrón" required>
 
-            <label for="nombre_comercial">Nombre Comercial:</label>
-            <input type="text" id="nombre_comercial" name="nombre_comercial">
+                <input type="text" id="nombre_comercial" name="nombre_comercial" placeholder="Nombre Comercial">
+                <label>Fecha de Inicio de Operaciones</label>
+                <input type="date" id="fecha_inicio" name="fecha_inicio" placeholder="Fecha de Inicio de Operaciones" required>
 
-            <label for="fecha_inicio">Fecha de Inicio de Operaciones:</label>
-            <input type="date" id="fecha_inicio" name="fecha_inicio">
-
-            <button type="submit">Registrar</button>
+                <button type="submit">Registrar</button>
+            </fieldset>
+        </form>
         </form>
     </div>
 </div>
