@@ -38,13 +38,13 @@ footer {
     height: auto;
 }
 .navbar {
-    background-color: #ffffff; /* Color de fondo */
+    background-color: #ffffff;
     overflow: hidden;
-    position: fixed; /* Mantenerlo en la parte superior al hacer scroll */
+    position: fixed;
     width: 100%;
     top: 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    z-index: 1000; /* Asegúrate de que esté por encima de otros elementos */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
 }
 
 .navbar ul {
@@ -52,34 +52,34 @@ footer {
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: space-around; /* Espaciado uniforme */
+    justify-content: space-around;
 }
 
 .nav-button {
     display: block;
     background-color: transparent;
     border: none;
-    color: #333; /* Color de texto por defecto */
+    color: #333;
     text-align: center;
-    padding: 15px 25px; /* Espaciado interno */
+    padding: 15px 25px;
     cursor: pointer;
     text-decoration: none;
-    font-size: 16px; /* Tamaño de fuente */
-    font-weight: bold; /* Resaltar el texto */
-    transition: background-color 0.3s, color 0.3s, transform 0.2s, border-bottom 0.3s; /* Transiciones suaves */
-    position: relative; /* Para efectos de pseudo-elementos */
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s, border-bottom 0.3s;
+    position: relative;
 }
 
 .nav-button::after {
-    content: ""; /* Crear un efecto de línea bajo el texto */
+    content: "";
     display: block;
-    height: 2px; /* Altura de la línea */
-    background-color: #203890; /* Color de la línea */
-    width: 0; /* Ancho inicial */
+    height: 2px;
+    background-color: #203890;
+    width: 0;
     transition: width 0.3s; /* Transición suave */
     position: absolute;
     left: 50%;
-    bottom: 0; /* Posición debajo del botón */
+    bottom: 0;
     transform: translateX(-50%); /* Centrar la línea */
 }
 
@@ -90,11 +90,11 @@ footer {
 }
 
 .nav-button:hover::after {
-    width: 100%; /* Ampliar la línea al pasar el mouse */
+    width: 100%;
 }
 
 .nav-button:focus {
-    outline: none; /* Eliminar contorno de enfoque */
+    outline: none;
 }
 
 
