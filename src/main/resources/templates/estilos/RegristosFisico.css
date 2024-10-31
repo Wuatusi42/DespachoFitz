@@ -11,6 +11,8 @@ html, body {
 .formulario {
     width: 100%;
     height: 90%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 footer {
@@ -24,6 +26,7 @@ footer {
     left: 0;
     right: 0;
 }
+
 .img {
     position: absolute;
     top: 10px;
@@ -34,6 +37,7 @@ footer {
     width: 125px;
     height: auto;
 }
+
 .navbar {
     background-color: white;
     overflow: hidden;
@@ -41,25 +45,30 @@ footer {
     width: 100%;
     top: 0;
 }
+.navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
 
 .nav-button {
     float: left;
     display: block;
-    background-color: transparent; /* Fondo transparente inicialmente */
-    border: none; /* Sin borde */
-    color: rgb(0, 0, 0); /* Color del texto */
+    background-color: transparent;
+    border: none;
+    color: rgb(0, 0, 0);
     text-align: center;
-    padding: 20px 20px; /* Espaciado */
-    cursor: pointer; /* Cambia el cursor a puntero */
-    font-size: inherit; /* Hereda el tamaño de fuente */
-    transition: background-color 0.3s, color 0.3s; /* Transición suave para fondo y color */
+    padding: 20px 20px;
+    cursor: pointer;
+    font-size: inherit;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .nav-button:hover {
     background-color: #203890;
     color: black;
 }
-
 
 .form-container {
     max-height: 80vh;
@@ -71,10 +80,6 @@ footer {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.formulario {
-    padding: 10px;
-}
-
 .formulario label {
     display: block;
     margin-bottom: 8px;
@@ -82,9 +87,9 @@ footer {
 
 .formulario input,
 .formulario select {
-    width: 30%;
-    padding: 10px;
-    margin-bottom: 10px;
+    width: calc(16% - 20px);
+    padding: 5px;
+    margin: 10px 10px 10px 0;
     border: none;
     border-bottom: 2px solid #afb1b9;
     border-radius: 0;
@@ -92,14 +97,15 @@ footer {
     font-size: 16px;
     transition: border-color 0.3s;
 }
-}
+
 .formulario input[id="direccion1"],
 .formulario input[id="direccion2"] {
-    width: 100%;
+    width: 95%;
     max-width: none;
 }
+
 .formulario button {
-    width: 100%;
+    width: 20%;
     padding: 10px;
     background-color: #4CAF50;
     color: white;
@@ -111,6 +117,7 @@ footer {
 .formulario button:hover {
     background-color: #45a049;
 }
+
 
 
         

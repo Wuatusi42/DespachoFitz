@@ -7,16 +7,16 @@
 }
 .logo {
 text-align: right;
-    width: 150px; /* Ajusta el ancho según lo que necesites */
-    height: auto; /* Mantiene la proporción de la imagen */
-    display: block; /* Asegura que la imagen esté en su propia línea */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
+    width: 150px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 .top-right-image {
-    position: absolute; /* Posiciona la imagen de manera absoluta */
-    top: 10px; /* Espacio desde la parte superior */
-    right: 10px; /* Espacio desde la derecha */
-    z-index: 1000; /* Asegura que la imagen esté encima de otros elementos */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
 }
 label{
     text-align: left;

@@ -11,17 +11,12 @@
     <div class="img">
         <img src="img/logo.png" alt="Logo" class="logo">
     </div>
-    <div class="navbar">
-        <button onclick="location.href='index.html'" class="nav-button">CONSULTA</button>
-        <button onclick="location.href='index.html'" class="nav-button">DESCARGA</button>
-        <button onclick="location.href='index.html'" class="nav-button">LOGIN</button>
-    </div>
-
+    <iframe src="navbar.html" width="50%" height="160%"></iframe>
 </div>
 <div class="form-container">
     <div class="formulario">
         <h2>Registro de Cliente</h2>
-        <form action="procesar_registro.php" method="POST">
+        <form method="POST">
             <fieldset>
                 <legend>Información del Cliente</legend>
 
@@ -42,8 +37,8 @@
                 <input type="text" id="direccion2" name="direccion2" placeholder="Dirección 2">
 
                 <input type="text" id="rfc" name="rfc" placeholder="RFC" required>
-                <label>Fecha de Nacimiento</label>
-                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" placeholder="Fecha de Nacimiento" required>
+
+                <input type="text" id="fecha_nacimiento" name="fecha_nacimiento" placeholder="Fecha de Nacimiento" required pattern="\d{2}/\d{2}/\d{4}">
 
                 <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad" required>
 
@@ -73,10 +68,12 @@
                 <input type="text" id="estatus_padron" name="estatus_padron" placeholder="Estatus en el Padrón" required>
 
                 <input type="text" id="nombre_comercial" name="nombre_comercial" placeholder="Nombre Comercial">
-                <label>Fecha de Inicio de Operaciones</label>
-                <input type="date" id="fecha_inicio" name="fecha_inicio" placeholder="Fecha de Inicio de Operaciones" required>
 
-                <button type="submit">Registrar</button>
+                <input type="text" id="fecha_inicio" name="fecha_inicio" placeholder="Fecha de Inicio de Operacion" required pattern="\d{2}/\d{2}/\d{4}">
+                <br>
+                <br>
+                <br>
+                <center><button type="submit">Registrar</button></center>
             </fieldset>
         </form>
         </form>
