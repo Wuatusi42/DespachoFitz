@@ -5,6 +5,7 @@
     box-sizing:border-box;
     font-family: "Rubik", sans-serif;
 }
+
 .logo {
 text-align: right;
     width: 150px;
@@ -58,6 +59,7 @@ h2 {
 }
 
  #loginBoton{
+    text-decoration: none;
     width: 50%;
     padding: 10px;
     background-color: #004a75;

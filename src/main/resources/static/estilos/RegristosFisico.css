@@ -38,7 +38,7 @@ footer {
     height: auto;
 }
 .navbar {
-    background-color: #ffffff;
+    background-color: #155973;
     overflow: hidden;
     position: fixed;
     width: 100%;
@@ -59,7 +59,7 @@ footer {
     display: block;
     background-color: transparent;
     border: none;
-    color: #333;
+    color: white;
     text-align: center;
     padding: 15px 25px;
     cursor: pointer;
@@ -74,7 +74,7 @@ footer {
     content: "";
     display: block;
     height: 2px;
-    background-color: #203890;
+    background-color: #b0afb8;
     width: 0;
     transition: width 0.3s; /* Transición suave */
     position: absolute;
@@ -84,8 +84,8 @@ footer {
 }
 
 .nav-button:hover {
-    color: #fff; /* Cambiar color de texto al pasar el mouse */
-    background-color: #203890; /* Color de fondo al pasar el mouse */
+    color: black; /* Cambiar color de texto al pasar el mouse */
+    background-color: #b0afb8; /* Color de fondo al pasar el mouse */
     transform: scale(1.05); /* Efecto de aumento */
 }
 

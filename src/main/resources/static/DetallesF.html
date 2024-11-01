@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Detalles</title>
+    <link rel="stylesheet" href="estilos/DetallesFisica.css">
+</head>
+<body>
+<div class="cabeza">
+    <nav class="navbar">
+        <ul>
+            <li><a href="ConsultaFisicos.html" class="nav-button">CONSULTA</a></li>
+            <li><a href="RegristroFisicas.html" class="nav-button">REGISTRA</a></li>
+            <li><a href="index.html" class="nav-button">LOGIN</a></li>
+        </ul>
+    </nav>
+</div>
+<div class="form-container">
+    <div class="formulario">
+        <h2>Detalles</h2>
+        <form method="POST">
+            <fieldset>
+                <legend>Información del Cliente</legend>
+                <input type="text" id="no_cliente" name="no_cliente" placeholder="No. Cliente"  th:value="${cliente.no_cliente}">
+
+                <input type="text" id="primer_nombre" name="primer_nombre" placeholder="Primer Nombre"  th:value="${cliente.primer_nombre}">
+
+                <input type="text" id="segundo_nombre" name="segundo_nombre" placeholder="Segundo Nombre" th:value="${cliente.segundo_nombre}">
+
+                <input type="text" id="tercer_nombre" name="tercer_nombre" placeholder="Tercer Nombre" th:value="${cliente.tercer_nombre}">
+
+                <input type="text" id="apellido_paterno" name="apellido_paterno" placeholder="Apellido Paterno" th:value="${cliente.apellido_paterno}">
+
+                <input type="text" id="apellido_materno" name="apellido_materno" placeholder="Apellido Materno" th:value="${cliente.apellido_materno}">
+
+                <input type="text" id="direccion1" name="direccion1" placeholder="Dirección 1" th:value="${cliente.direccion1}">
+
+                <input type="text" id="direccion2" name="direccion2" placeholder="Dirección 2" th:value="${cliente.direccion2}">
+
+                <input type="text" id="rfc" name="rfc" placeholder="RFC" th:value="${cliente.rfc}">
+
+                <input type="text" id="fecha_nacimiento" name="fecha_nacimiento" placeholder="Fecha de Nacimiento" th:value="${cliente.fecha_nacimiento}">
+
+                <input type="text" id="ciudad" name="ciudad" placeholder="Ciudad" th:value="${cliente.ciudad}">
+
+                <input type="text" id="estado" name="estado" placeholder="Estado" th:value="${cliente.estado}">
+
+                <input type="text" id="pais" name="pais" placeholder="País" th:value="${cliente.pais}">
+
+                <select id="sexo" name="sexo" placeholder="sexo"  th:value="${cliente.sexo}">
+                <option value="">Selecciona Sexo</option>
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+                <option value="otro">Otro</option>
+                </select>
+                <input type="number" id="edad" name="edad" placeholder="Edad" th:value="${cliente.edad}">
+
+                <input type="tel" id="telefono1" name="telefono1" placeholder="Teléfono 1" th:value="${cliente.telefono1}">
+
+                <input type="tel" id="telefono2" name="telefono2" placeholder="Teléfono 2" th:value="${cliente.telefono2}">
+
+                <input type="text" id="curp" name="curp" placeholder="CURP" th:value="${cliente.curp}">
+
+                <input type="text" id="actividad_economica" name="actividad_economica" placeholder="Actividad Económica" th:value="${cliente.actividad_economica}">
+
+                <input type="number" id="ingresos_mensuales" name="ingresos_mensuales" placeholder="Ingresos Mensuales" th:value="${cliente.ingresos_mensuales}">
+
+                <input type="text" id="estatus_padron" name="estatus_padron" placeholder="Estatus en el Padrón" th:value="${cliente.estatus_padron}">
+
+                <input type="text" id="nombre_comercial" name="nombre_comercial" placeholder="Nombre Comercial" th:value="${cliente.nombre_comercial}">
+
+                <input type="text" id="fecha_inicio" name="fecha_inicio" placeholder="Fecha de Inicio de Operacion" th:value="${fechaIO}">
+            </fieldset>
+            <br>
+            <button type="submit" class="Eliminar">Eliminar</button>
+            <button type="submit" class="Descarga">Descargar Informacion</button>
+        </form>
+        </form>
+    </div>
+</div>
+<div class="footer">
+    <footer>
+        <center><p>:: 2024 :: DESPACHO ::</p></center>
+    </footer>
+</div>
+</body>
+</html>
+

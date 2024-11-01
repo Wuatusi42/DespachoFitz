@@ -76,7 +76,7 @@ footer {
     right: 0;
 }
 .navbar {
-    background-color: #ffffff;
+    background-color: #155973;
     overflow: hidden;
     position: fixed;
     width: 100%;
@@ -97,7 +97,7 @@ footer {
     display: block;
     background-color: transparent;
     border: none;
-    color: #333;
+    color: white;
     text-align: center;
     padding: 15px 25px;
     cursor: pointer;
@@ -112,19 +112,19 @@ footer {
     content: "";
     display: block;
     height: 2px;
-    background-color: #203890;
+    background-color: #b0afb8;
     width: 0;
-    transition: width 0.3s;
+    transition: width 0.3s; /* Transición suave */
     position: absolute;
     left: 50%;
     bottom: 0;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Centrar la línea */
 }
 
 .nav-button:hover {
-    color: #fff;
-    background-color: #203890;
-    transform: scale(1.05);
+    color: black; /* Cambiar color de texto al pasar el mouse */
+    background-color: #b0afb8; /* Color de fondo al pasar el mouse */
+    transform: scale(1.05); /* Efecto de aumento */
 }
 
 .nav-button:hover::after {
@@ -132,5 +132,15 @@ footer {
 }
 
 .nav-button:focus {
-    outline: none; 
+    outline: none;
+}
+.Detalles{
+text-decoration:none;
+    width:80px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
