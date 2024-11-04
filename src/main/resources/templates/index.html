@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html xmlns:th="http://www.w3.org/1999/xhtml" lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login - Fitz & Cruz</title>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="estilos/styles.css">
+    <link rel="stylesheet" th:href="@{/estilos/styles.css}">
     <style>
         .modal {
             display: none;
@@ -26,24 +26,28 @@
             width: 300px;
             text-align: center;
         }
+        .error {
+            color: red;
+            margin: 10px 0;
+        }
     </style>
 </head>
 <body>
 
 <div class="carrusel">
     <div class="carrusel-imagenes">
-        <img src="img/Img1.jpg" alt="Imagen 1">
-        <img src="img/Img2.jpg" alt="Imagen 2">
-        <img src="img/img4.jpg" alt="Imagen 3">
-        <img src="img/pedido-6168.jpg" alt="Imagen 4">
+        <img th:src="@{img/Img1.jpg}" alt="Imagen 1">
+        <img th:src="@{img/Img2.jpg}" alt="Imagen 2">
+        <img th:src="@{img/Img4.jpg}" alt="Imagen 3">
+        <img th:src="@{img/pedido-6168.jpg}" alt="Imagen 4">
     </div>
 </div>
 <div class="container">
     <br>
     <br>
     <div>
-        <img src="img/logo.png" class="logo" alt="Logo">
-        <center> <h2>BIENVENIDO AL DESPACHO<br>FITZ Y CRUZ</h2></center>
+        <img th:src="@{/img/logo.png}" class="logo" alt="Logo">
+        <center><h2>BIENVENIDO AL DESPACHO<br>FITZ Y CRUZ</h2></center>
     </div>
     <div class="login">
         <br>
@@ -51,7 +55,7 @@
         <br>
         <br>
         <br>
-        <form onsubmit="return false;">
+        <form th:action="@{/login}" method="post">
             <center>
                 <label for="nombre"> Nombre de usuario </label>
                 <br>
@@ -67,15 +71,18 @@
                     <button type="button" id="togglePassword" class="toggle-password">👁️</button>
                 </div>
                 <br>
-                <button type="button" id="loginBoton">LOGIN</button> <!-- Cambiar a type="button" -->
-                <div id="myModal" class="modal">
+                <button type="submit" id="loginBoton">LOGIN</button>
+                <div th:if="${showModal}" id="myModal" class="modal" style="display: block;">
                     <div class="modal-content">
                         <br>
                         <h5>ELIGA CON QUE TIPO DE PERSONA VA A TRABAJAR</h5>
                         <br>
-                        <a style="text-decoration: none;" href="RegristroFisicas.html" class="loginBoton" id="fisicas">FISICA</a>
-                        <a style="text-decoration: none;" href="RegistroMoral.html" class="loginBoton" id="moral">MORAL</a>
+                        <a style="text-decoration: none;" href="navbar.html" class="loginBoton" id="fisicas">FISICA</a>
+                        <a style="text-decoration: none;" th:href="@{/static/RegistroMoral.html}" class="loginBoton" id="moral">MORAL</a>
                     </div>
+                </div>
+                <div th:if="${error}" class="error">
+                    <p th:text="${error}"></p>
                 </div>
             </center>
         </form>
@@ -91,35 +98,26 @@
     togglePasswordButton.addEventListener('click', function () {
         const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
         passwordInput.setAttribute('type', type);
-
         // Cambia el icono del botón
         this.textContent = type === 'password' ? '👁️' : '🚫';
     });
 
-    // Abre el modal al presionar el botón LOGIN, si ambos campos están llenos
-    document.getElementById('loginBoton').onclick = function() {
-        const nombre = document.getElementById('nombre').value;
-        const password = document.getElementById('password').value;
-
-        if (nombre && password) { // Verifica que ambos campos no estén vacíos
-            document.getElementById('myModal').style.display = "block"; // Muestra el modal
-        } else {
-            alert('Por favor, completa ambos campos.'); // Alerta si algún campo está vacío
-        }
-    }
-
-    // Cierra el modal
+    // Función para cerrar el modal
     function closeModal() {
         document.getElementById('myModal').style.display = "none"; // Oculta el modal
     }
 
-
-
     // Cerrar el modal si el usuario hace clic fuera de él
     window.onclick = function(event) {
-        if (event.target == document.getElementById('myModal')) {
+        if (event.target === document.getElementById('myModal')) {
             closeModal();
         }
+    };
+
+    // Muestra el modal si se pasó el atributo "showModal" desde el controlador
+    const showModal = /*[[${showModal}]]*/ false; // Thymeleaf para obtener el valor
+    if (showModal) {
+        document.getElementById('myModal').style.display = "block"; // Muestra el modal si es verdadero
     }
 </script>
 </body>
