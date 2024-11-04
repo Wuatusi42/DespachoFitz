@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="estilos/Consulta.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/estilos/Consulta.css}">
     <title>Consulta cuenta</title>
 </head>
 <body>
 <div class="cabeza">
     <nav class="navbar">
         <ul>
-            <li><a href="ConsultaFisicos.html" class="nav-button">CONSULTA</a></li>
-            <li><a href="../templates/RegristroFisicas.html" class="nav-button">REGISTRA</a></li>
-            <li><a href="../templates/index.html" class="nav-button">LOGIN</a></li>
+            <li><a th:href="@{ConsultaFisicos}" class="nav-button">CONSULTA</a></li>
+            <li><a th:href="@{RegistroFisicas}" class="nav-button">REGISTRA</a></li>
+            <li><a th:href="@{/}" class="nav-button">LOGIN</a></li>
         </ul>
     </nav>
     <div class="img">
-        <img src="img/logo.png" alt="Logo" class="logo">
+        <img th:src="@{/img/logo.png}" class="logo" alt="Logo">
     </div>
 </div>
 <br>
@@ -67,7 +67,7 @@
             </tbody>
         </table>
         <br>
-        <a href="DetallesF.html" class="Detalles">Mas Detalles</a>
+        <a th:href="@{/Detalles}" class="Detalles">Mas Detalles</a>
     </div>
 </div>
 <div class="footer">

@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registro de Cliente</title>
-    <link rel="stylesheet" href="estilos/RegristosFisico.css">
+    <link rel="stylesheet" th:href="@{/estilos/RegristosFisico.css}">
 </head>
 <body>
 <div class="cabeza">
     <div class="img">
-        <img src="img/logo.png" alt="Logo" class="logo">
+        <img src="../static/img/logo.png" alt="Logo" class="logo">
     </div>
     <nav class="navbar">
         <ul>
-            <li><a href="ConsultaMoral.html" class="nav-button">CONSULTA</a></li>
-            <li><a href="RegistroMoral.html" class="nav-button">REGISTRA</a></li>
-            <li><a href="../templates/index.html" class="nav-button">LOGIN</a></li>
+            <li><a th:href="@{/ConsultaMoral}" class="nav-button">CONSULTA</a></li>
+            <li><a th:href="@{/RegistrarMoral}" class="nav-button">REGISTRA</a></li>
+            <li><a th:href="@{/}" class="nav-button">LOGIN</a></li>
         </ul>
     </nav>
 </div>

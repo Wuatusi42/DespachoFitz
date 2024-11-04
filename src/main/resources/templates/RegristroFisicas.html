@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.w3.org/1999/xhtml">
+<html xmlns:th="http://www.w3.org/1999/xhtml" lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registro de Cliente</title>
-    <link rel="stylesheet" th:href="@{/estilos/RegistrosFisicos.css}">
+    <link rel="stylesheet" th:href="@{/estilos/RegristosFisico.css}">
 </head>
 <body>
 <div class="cabeza">
     <div class="img">
-        <img th:src="@{/img/logo.png}" alt="Logo" class="logo">
+        <img th:src="@{/img/logo.png}" class="logo" alt="Logo">
     </div>
     <nav class="navbar">
         <ul>
-            <li><a href="../static/ConsultaFisicos.html" class="nav-button">CONSULTA</a></li>
-            <li><a href="RegristroFisicas.html" class="nav-button">REGISTRA</a></li>
-            <li><a href="index.html" class="nav-button">LOGIN</a></li>
+            <li><a th:href="@{ConsultaFisicos}" class="nav-button">CONSULTA</a></li>
+            <li><a th:href="@{RegistroFisicas}" class="nav-button">REGISTRA</a></li>
+            <li><a th:href="@{/}" class="nav-button">LOGIN</a></li>
         </ul>
     </nav>
 </div>
@@ -99,5 +99,4 @@
 </div>
 </body>
 </html>
-
 
