@@ -289,4 +289,6 @@ public class Cliente {
     public void setRegimen(String regimen) {
         this.regimen = regimen;
     }
+
+
 }

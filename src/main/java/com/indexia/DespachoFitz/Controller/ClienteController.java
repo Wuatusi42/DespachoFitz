@@ -17,7 +17,7 @@ public class ClienteController {
     @Autowired
     private ClienteService clienteService;
 
-    @PostMapping("/save")
+    /*@PostMapping("/save")
     public ResponseEntity<?> create(@RequestBody ClienteRequest request) {
         try {
             Cliente productoRequest = clienteService.save(request);
@@ -26,5 +26,5 @@ public class ClienteController {
             System.out.println("error" + e);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("error");
         }
-    }
+    }*/
 }

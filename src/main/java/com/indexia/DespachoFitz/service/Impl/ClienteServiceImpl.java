@@ -16,59 +16,13 @@ public class ClienteServiceImpl implements ClienteService {
     private ClienteDAO clienteDAO;
 
     @Override
-    public Cliente save(ClienteRequest clienteRequest) {
-        Cliente cliente = new Cliente();
-        cliente.setPrimerNombre(clienteRequest.getInicialName());
-        cliente.setSegundoNombre(clienteRequest.getSecondName());
-        cliente.setTercerNombre(clienteRequest.getThreeName());
-        cliente.setApellidoMaterno(clienteRequest.getMaternLastName());
-        cliente.setApellidoPaterno(clienteRequest.getPaternLastName());
-        cliente.setDireccion1(clienteRequest.getAddress1());
-        cliente.setDireccion2(clienteRequest.getAddress2());
-        cliente.setRFC(clienteRequest.getRFC());
-        cliente.setFechaNacimiento(clienteRequest.getBirthdate());
-        cliente.setCiudad(clienteRequest.getCity());
-        cliente.setEstado(clienteRequest.getState());
-        cliente.setPais(clienteRequest.getCountry());
-        cliente.setSexo(clienteRequest.getSex());
-        cliente.setEdad(clienteRequest.getAge());
-        cliente.setTelefono1(clienteRequest.getPhone1());
-        cliente.setTelefono2(clienteRequest.getPhone2());
-        cliente.setCURP(clienteRequest.getCURP());
-        cliente.setActividadEconomica(clienteRequest.getEconomyActivity());
-        cliente.setIngresosMensuales(clienteRequest.getMonthIncome());
-        cliente.setEstatusPadron(clienteRequest.getStatusPadron());
-        cliente.setNombreComercial(clienteRequest.getComercialName());
-        cliente.setFechaInicioOperaciones(clienteRequest.getDateInicialOperation());
-        cliente.setHonorariosMensuales(clienteRequest.getMonthIncome());
-        cliente.seteFirma(clienteRequest.geteSignature());
-        cliente.setClabeCiegRps(clienteRequest.getClabCiegRps());
-        cliente.setSituacionBancaria(clienteRequest.getBancarySituacion());
-        cliente.setRegimen(clienteRequest.getRegimen());
-        return clienteDAO.save(cliente);
+    public Cliente save(Cliente cliente) {
+       return clienteDAO.save(cliente);
     }
 
     @Override
-    public List<Cliente> findAll() {
-        List<Cliente> clienteList = clienteDAO.findAll();
-        return clienteList;
+    public Cliente findByCliente(String primerNombre, String RFC, String sexo) {
+        return clienteDAO.findByCliente(primerNombre, RFC, sexo).orElse(null);
     }
 
-    @Override
-    public Cliente update(Integer idCliente, ClienteRequest clienteRequest) {
-        Optional<Cliente> existe = clienteDAO.findById(idCliente);
-        if (existe.isPresent()) {
-            Cliente clientesUp = existe.get();
-            if (clienteRequest.getInicialName() != null){
-                clientesUp.setPrimerNombre(clienteRequest.getInicialName());
-            }
-            return clienteDAO.save(clientesUp);
-        }
-        return null;
-    }
-
-    @Override
-    public void delate(Integer idCliente) {
-        clienteDAO.deleteById(idCliente);
-    }
 }
