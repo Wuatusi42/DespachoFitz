@@ -41,14 +41,13 @@ public class ConsultaFisicasController {
     }
     @GetMapping("/verDetalles")
     public String verDetalles(@RequestParam("idCliente") Integer idCliente, Model model) {
-        // Buscar cliente por ID
         Cliente cliente = clienteService.findById(idCliente);
         if (cliente == null) {
             model.addAttribute("mensaje", "Cliente no encontrado.");
-            return "ConsultaFisicos";  // Volver a la vista por defecto
+            return "ConsultaFisicos";
         }
 
         model.addAttribute("cliente", cliente);
-        return "DetallesF";  // Redirigir a la vista de detalles
+        return "DetallesF";
     }
 }
