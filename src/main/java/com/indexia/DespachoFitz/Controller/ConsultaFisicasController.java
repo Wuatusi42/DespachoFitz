@@ -39,16 +39,16 @@ public class ConsultaFisicasController {
             return "ConsultaFisicos";
         }
     }
-    /*
     @GetMapping("/verDetalles")
     public String verDetalles(@RequestParam("idCliente") Integer idCliente, Model model) {
-        try {
-            Cliente cliente = clienteService.findById(idCliente); // Este método debe ser implementado en tu servicio
-            model.addAttribute("cliente", cliente);
-            return "DetallesF";
-        } catch (Exception e) {
-            model.addAttribute("mensaje", "Ocurrió un error inesperado al cargar los detalles: " + e.getMessage());
-            return "ConsultaFisicos";
+        // Buscar cliente por ID
+        Cliente cliente = clienteService.findById(idCliente);
+        if (cliente == null) {
+            model.addAttribute("mensaje", "Cliente no encontrado.");
+            return "ConsultaFisicos";  // Volver a la vista por defecto
         }
-    }*/
+
+        model.addAttribute("cliente", cliente);
+        return "DetallesF";  // Redirigir a la vista de detalles
+    }
 }
