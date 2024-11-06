@@ -21,8 +21,13 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
-    public Cliente findByCliente(String primerNombre, String RFC, String sexo) {
-        return clienteDAO.findByCliente(primerNombre, RFC, sexo).orElse(null);
+    public Cliente findByPrimerNombreAndRFCAndSexoAndRegimen(String primerNombre, String RFC, String sexo, String regimen) {
+        return clienteDAO.findByPrimerNombreAndRFCAndSexoAndRegimen(primerNombre, RFC, sexo, "Fisica");
+    }
+
+    @Override
+    public Cliente findById(Integer idCliente) {
+        return clienteDAO.findById(idCliente).orElse(null);
     }
 
 }

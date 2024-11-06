@@ -38,7 +38,7 @@ public class Cliente {
     @Column(name = "sexo")
     private String sexo;
     @Column(name = "edad")
-    private int edad;
+    private Integer edad;
     @Column(name = "telefono_1")
     private String telefono1;
     @Column(name = "telefono_2")
@@ -178,11 +178,11 @@ public class Cliente {
         this.sexo = sexo;
     }
 
-    public int getEdad() {
+    public Integer getEdad() {
         return edad;
     }
 
-    public void setEdad(int edad) {
+    public void setEdad(Integer edad) {
         this.edad = edad;
     }
 

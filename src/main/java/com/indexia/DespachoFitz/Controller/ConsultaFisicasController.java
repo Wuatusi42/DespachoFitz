@@ -12,22 +12,43 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ConsultaFisicasController {
     @Autowired
     private ClienteService clienteService;
+
     @GetMapping("/ConsultaFisicos")
     public String ConsultaFisicos(Model model) {
         return "ConsultaFisicos";
     }
-    @GetMapping("/ConsultaFisicos")
+
+    @GetMapping("/buscarCliente")
     public String buscarCliente(
-            @RequestParam(value = "primerNombre",required = false)String primerNombre,
-            @RequestParam(value = "RFC",required = false)String RFC,
-            @RequestParam(value = "sexo",required = false)String sexo,
-            Model model
-    ){
-        Cliente cliente = clienteService.findByCliente(primerNombre, RFC, sexo);
-        model.addAttribute("cliente",cliente);
-        model.addAttribute("primerNombre",primerNombre);
-        model.addAttribute("RFC",RFC);
-        model.addAttribute("sexo",sexo);
-        return "ConsultaFisicos";
+            @RequestParam(value = "primerNombre") String primerNombre,
+            @RequestParam(value = "RFC") String RFC,
+            @RequestParam(value = "sexo") String sexo,
+            Model model) {
+        try {
+           Cliente cliente = clienteService.findByPrimerNombreAndRFCAndSexoAndRegimen(primerNombre,RFC,sexo,"Fisica");
+            if (cliente == null) {
+                model.addAttribute("mensaje", "No se encontraron resultados para los parámetros proporcionados.");
+            }
+            model.addAttribute("cliente", cliente);
+            model.addAttribute("primerNombre", primerNombre);
+            model.addAttribute("RFC", RFC);
+            model.addAttribute("sexo", sexo);
+            return "ConsultaFisicos";
+        } catch (Exception e) {
+            model.addAttribute("mensaje", "Ocurrió un error inesperado: " + e.getMessage());
+            return "ConsultaFisicos";
+        }
     }
+    /*
+    @GetMapping("/verDetalles")
+    public String verDetalles(@RequestParam("idCliente") Integer idCliente, Model model) {
+        try {
+            Cliente cliente = clienteService.findById(idCliente); // Este método debe ser implementado en tu servicio
+            model.addAttribute("cliente", cliente);
+            return "DetallesF";
+        } catch (Exception e) {
+            model.addAttribute("mensaje", "Ocurrió un error inesperado al cargar los detalles: " + e.getMessage());
+            return "ConsultaFisicos";
+        }
+    }*/
 }
