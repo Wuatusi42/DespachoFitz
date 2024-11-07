@@ -4,10 +4,18 @@ import com.indexia.DespachoFitz.model.entity.Cliente;
 import com.indexia.DespachoFitz.service.ClienteService;
 import jakarta.persistence.Access;
 import jakarta.persistence.criteria.CriteriaBuilder;
+import org.apache.commons.io.output.ByteArrayOutputStream;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
+
+import java.io.IOException;
 
 @Controller
 public class DetallesController {
@@ -29,5 +37,26 @@ public class DetallesController {
         }
 
         return "redirect:/ConsultaFisicos"; // Redirige a la vista correspondiente
+    }
+    @GetMapping("/Detalles/descargarExcel")
+    public ResponseEntity<byte[]> descargarExcel(@RequestParam("idCliente") Integer idCliente) throws IOException {
+        // Crear un libro de trabajo vacío
+        XSSFWorkbook workbook = new XSSFWorkbook();
+
+        // Convertir el libro de trabajo a bytes
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        workbook.write(bos);
+        workbook.close();
+
+        // Configurar las cabeceras para la descarga
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentDispositionFormData("attachment", "detalles_cliente.xlsx");
+        headers.setContentType(org.springframework.http.MediaType.APPLICATION_OCTET_STREAM);
+
+        // Retornar el archivo para descarga
+        ResponseEntity<byte[]> response = new ResponseEntity<>(bos.toByteArray(), headers, HttpStatus.OK);
+
+        // Redirigir a la misma vista (Detalles)
+        return response;
     }
 }

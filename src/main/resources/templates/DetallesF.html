@@ -84,7 +84,7 @@
             <a th:href="@{/eliminarCliente/{idCliente}(idCliente=${cliente.idCliente})}" onclick="return confirm('¿Estás seguro de que deseas eliminar este cliente?');" class="Eliminar">Eliminar</a>
 
 
-            <button type="submit" class="Descarga">Descargar Informacion</button>
+            <a th:href="@{/Detalles/descargarExcel(idCliente=${cliente.idCliente})}" class="Descarga">Descargar Información</a>
         </form>
         </form>
     </div>
