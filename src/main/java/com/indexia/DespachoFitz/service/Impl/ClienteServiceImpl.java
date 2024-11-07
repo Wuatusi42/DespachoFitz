@@ -30,4 +30,13 @@ public class ClienteServiceImpl implements ClienteService {
         return clienteDAO.findById(idCliente).orElse(null);
     }
 
+    @Override
+    public boolean eliminarCliente(Integer idCliente) {
+        if (clienteDAO.existsById(idCliente)){
+            clienteDAO.deleteById(idCliente);
+            return true;
+        }
+        return false;
+    }
+
 }

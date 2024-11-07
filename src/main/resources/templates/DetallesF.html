@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Detalles</title>
+    <style>
+        .Eliminar{
+       display: inline-block;
+     width: 20%;
+     padding: 10px;
+     color: white;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+     background-color: #e41a02;
+     text-decoration: none;
+     text-align: center;
+}
+    </style>
     <link rel="stylesheet" th:href="@{/estilos/DetallesFisica.css}">
 </head>
 <body>
@@ -67,7 +81,9 @@
 
             </fieldset>
             <br>
-            <button type="submit" class="Eliminar">Eliminar</button>
+            <a th:href="@{/eliminarCliente/{idCliente}(idCliente=${cliente.idCliente})}" onclick="return confirm('¿Estás seguro de que deseas eliminar este cliente?');" class="Eliminar">Eliminar</a>
+
+
             <button type="submit" class="Descarga">Descargar Informacion</button>
         </form>
         </form>
