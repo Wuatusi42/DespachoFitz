@@ -71,7 +71,11 @@
                 <br>
                 <input type="text" id="primerNombre" name="primerNombre" placeholder="Primer Nombre" th:value="${primerNombre}" required>
                 <input type="text" id="RFC" name="RFC" placeholder="RFC" th:value="${RFC}" required>
-                <input id="sexo" name="sexo" placeholder="sexo" th:value="${sexo}" required>
+                <select id="sexo" name="sexo" th:value="${sexo}" required>
+                    <option value="" disabled selected>Seleccione sexo</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                </select>
                 <br>
                 <br>
                 <br>

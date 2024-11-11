@@ -57,7 +57,10 @@
                     <input type="text" th:field="*{Ciudad}" placeholder="Ciudad">
                     <input type="text" th:field="*{Estado}" placeholder="Estado" >
                     <input type="text" th:field="*{pais}" placeholder="País" >
-                    <input type="text" th:field="*{sexo}" placeholder="Sexo" >
+                <select th:field="*{sexo}">
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                </select>
                     <input type="number" th:field="*{edad}" placeholder="Edad" >
                     <input type="text" th:field="*{telefono1}" placeholder="Teléfono 1">
                     <input type="text" th:field="*{telefono2}" placeholder="Teléfono 2">
@@ -68,6 +71,9 @@
                     <input type="text" th:field="*{nombreComercial}" placeholder="Nombre Comercial">
                   <!--  <input type="date" th:field="*{fechaInicioOperaciones}" placeholder="Fecha Inicio Operaciones">-->
                     <input type="number" th:field="*{honorariosMensuales}" placeholder="Honorarios Mensuales">
+                <select th:field="*{regimen}">
+                    <option value="fisica">Física</option>
+                </select>
                 <br>
                 <br>
                 <br>
