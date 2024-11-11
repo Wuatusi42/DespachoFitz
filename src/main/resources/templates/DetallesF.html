@@ -38,47 +38,46 @@
             <fieldset>
                 <legend>Información del Cliente</legend>
 
-                <input type="text" name="primerNombre" th:value="${cliente.primerNombre}"  placeholder="Primer Nombre"  >
+                <input type="text" name="primerNombre" th:value="${cliente.primerNombre}"  placeholder="Primer Nombre" readonly="readonly" >
 
-                <input type="text" th:value="${cliente.segundoNombre}" name="segundoNombre" placeholder="Segundo Nombre" >
+                <input type="text" th:value="${cliente.segundoNombre}" name="segundoNombre" placeholder="Segundo Nombre" readonly="readonly">
 
-                <input type="text" th:value="${cliente.tercerNombre}" name="tercerNombre" placeholder="Tercer Nombre" >
+                <input type="text" th:value="${cliente.tercerNombre}" name="tercerNombre" placeholder="Tercer Nombre" readonly="readonly">
 
-                <input type="text" th:value="${cliente.apellidoPaterno}" name="apellidoPaterno" placeholder="Apellido Paterno" >
+                <input type="text" th:value="${cliente.apellidoPaterno}" name="apellidoPaterno" placeholder="Apellido Paterno" readonly="readonly">
 
-                <input type="text" th:value="${cliente.apellidoMaterno}" name="apellidoMaterno" placeholder="Apellido Materno" >
+                <input type="text" th:value="${cliente.apellidoMaterno}" name="apellidoMaterno" placeholder="Apellido Materno" readonly="readonly">
+                <input type="text" th:value="${cliente.colonia}" placeholder="colonia" readonly="readonly">
+                <input type="text" th:value="${cliente.calle}" placeholder="calle" readonly="readonly">
+                <input type="text" th:value="${cliente.numeroCasa}" placeholder="Numero De Casa" readonly="readonly">
 
-                <input type="text" id="direccion1" th:value="${cliente.direccion1}" name="direccion1" placeholder="Dirección 1" >
-
-                <input type="text" id="direccion2" th:value="${cliente.direccion2}" name="direccion2" placeholder="Dirección 2" >
-
-                <input type="text" th:value="${cliente.RFC}" placeholder="RFC" >
+                <input type="text" th:value="${cliente.RFC}" placeholder="RFC" readonly="readonly">
 
 
-                <input type="text" th:value="${cliente.Ciudad}" placeholder="Ciudad" >
+                <input type="text" th:value="${cliente.Ciudad}" placeholder="Ciudad" readonly="readonly">
 
-                <input type="text" th:value="${cliente.Estado}" placeholder="Estado" >
+                <input type="text" th:value="${cliente.Estado}" placeholder="Estado" readonly="readonly">
 
-                <input type="text" th:value="${cliente.pais}" name="pais" placeholder="País" >
+                <input type="text" th:value="${cliente.pais}" name="pais" placeholder="País" readonly="readonly">
 
-                <input type="text" th:value="${cliente.sexo}" name="sexo" placeholder="sexo" >
+                <input type="text" th:value="${cliente.sexo}" name="sexo" placeholder="sexo" readonly="readonly">
 
-                <input type="number" th:value="${cliente.edad}" name="edad" placeholder="Edad" >
+                <input type="number" th:value="${cliente.edad}" name="edad" placeholder="Edad" readonly="readonly">
 
-                <input type="tel" th:value="${cliente.telefono1}" name="telefono1" placeholder="Teléfono 1" >
+                <input type="tel" th:value="${cliente.telefono1}" name="telefono1" placeholder="Teléfono 1" readonly="readonly">
 
-                <input type="tel" th:value="${cliente.telefono2}" name="telefono2" placeholder="Teléfono 2" >
+                <input type="tel" th:value="${cliente.telefono2}" name="telefono2" placeholder="Teléfono 2" readonly="readonly">
 
-                <input type="text" th:value="${cliente.CURP}" name="CURP" placeholder="CURP" >
+                <input type="text" th:value="${cliente.CURP}" name="CURP" placeholder="CURP" readonly="readonly">
 
-                <input type="text" th:value="${cliente.actividadEconomica}" name="actividadEconomica" placeholder="Actividad Económica" >
+                <input type="text" th:value="${cliente.actividadEconomica}" name="actividadEconomica" placeholder="Actividad Económica" readonly="readonly">
 
-                <input type="number" th:value="${cliente.ingresosMensuales}" name="ingresosMensuales" placeholder="Ingresos Mensuales" >
+                <input type="number" th:value="${cliente.ingresosMensuales}" name="ingresosMensuales" placeholder="Ingresos Mensuales" readonly="readonly">
 
-                <input type="text" th:value="${cliente.estatusPadron}" name="estatusPadron" placeholder="Estatus en el Padrón">
+                <input type="text" th:value="${cliente.estatusPadron}" name="estatusPadron" placeholder="Estatus en el Padrón" readonly="readonly">
 
-                <input type="text" th:value="${cliente.nombreComercial}" name="nombreComercial" placeholder="Nombre Comercial" >
-
+                <input type="text" th:value="${cliente.nombreComercial}" name="nombreComercial" placeholder="Nombre Comercial" readonly="readonly">
+                <input type="text" th:value="${cliente.estatusaVigencia}" name="estatusaVigencia" placeholder="Estatus de actividad" readonly="readonly">
             </fieldset>
             <br>
             <a th:href="@{/eliminarCliente/{idCliente}(idCliente=${cliente.idCliente})}" onclick="return confirm('¿Estás seguro de que deseas eliminar este cliente?');" class="Eliminar">Eliminar</a>

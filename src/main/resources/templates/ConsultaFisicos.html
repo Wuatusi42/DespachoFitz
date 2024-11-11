@@ -71,7 +71,13 @@
                 <br>
                 <br>
                 <input type="text" id="primerNombre" name="primerNombre" placeholder="Primer Nombre" th:value="${primerNombre}" required>
-                <input type="text" id="RFC" name="RFC" placeholder="RFC" th:value="${RFC}" required>
+                <select id="estatusaVigencia" name="estatusaVigencia" th:value="${estatusaVigencia}">
+                    <option value="">Estatus De Vigencia</option>
+                    <option value="Activo">Activo</option>
+                    <option value="Baja">Baja</option>
+                    <option value="En espera">En espera</option>
+                    <option value="Desafiliado">Desafiliado</option>
+                </select>
                 <br>
                 <br>
                 <br>
@@ -86,7 +92,7 @@
                 <th>Nombre Completo</th>
                 <th>RFC</th>
                 <th>Regimen</th>
-                <th>Situacion Bancaria</th>
+                <th>Estatus De Vigencia</th>
             </tr>
             </thead>
             <tbody>
@@ -95,7 +101,7 @@
                 <td th:text="${cliente.primerNombre != null ? cliente.primerNombre : 'null'}"> </td>
                 <td th:text="${cliente.RFC != null ? cliente.RFC : 'null'}"> </td>
                 <td th:text="${cliente.regimen != null ? cliente.regimen : 'null'}"> </td>
-                <td th:text="${cliente.situacionBancaria != null ? cliente.situacionBancaria : 'null'}"> </td>
+                <td th:text="${cliente.estatusaVigencia != null ? cliente.estatusaVigencia : 'null'}"> </td>
             </tr>
             </tbody>
         </table>

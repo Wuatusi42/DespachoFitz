@@ -50,8 +50,9 @@
                     <input type="text" th:field="*{tercerNombre}" placeholder="Tercer Nombre">
                     <input type="text" th:field="*{apellidoPaterno}" placeholder="Apellido Paterno" >
                     <input type="text" th:field="*{apellidoMaterno}" placeholder="Apellido Materno">
-                    <input type="text" th:field="*{direccion1}" placeholder="Dirección 1" >
-                    <input type="text" th:field="*{direccion2}" placeholder="Dirección 2">
+                <input type="text" th:field="*{colonia}" placeholder="colonia">
+                <input type="text" th:field="*{calle}" placeholder="calle">
+                <input type="text" th:field="*{numeroCasa}" placeholder="Numero De Casa">
                     <input type="text" th:field="*{RFC}" placeholder="RFC">
                    <!-- <input type="date" th:field="*{fechaNacimiento}" placeholder="Fecha de Nacimiento" >-->
                     <input type="text" th:field="*{Ciudad}" placeholder="Ciudad">
@@ -73,6 +74,12 @@
                     <input type="number" step="0.0000001" th:field="*{honorariosMensuales}" placeholder="Honorarios Mensuales">
                 <select th:field="*{regimen}">
                     <option value="fisica">Física</option>
+                </select>
+                <select th:field="*{estatusaVigencia}">
+                    <option value="Activo">Activo</option>
+                    <option value="Baja">Baja</option>
+                    <option value="En espera">En espera</option>
+                    <option value="Desafiliado">Desafiliado</option>
                 </select>
                 <br>
                 <br>

@@ -22,7 +22,7 @@ html, body {
 
 .formulario input,
 .formulario select {
-    width: calc(17% - 30px);
+    width: calc(30% - 50px);
     padding: 5px;
     margin: 10px 50px 20px 0;
     border: none;

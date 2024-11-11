@@ -21,10 +21,6 @@ public class Cliente {
     private String apellidoPaterno;
     @Column(name = "apellido_materno")
     private String apellidoMaterno;
-    @Column(name = "direccion_1")
-    private String direccion1;
-    @Column(name = "direccion_2")
-    private String direccion2;
     @Column(name = "rfc")
     private String RFC;
     @Column(name = "fecha_nacimiento")
@@ -65,7 +61,14 @@ public class Cliente {
     private String situacionBancaria;
     @Column(name = "regimen")
     private String regimen;
-
+    @Column(name = "colonia")
+    private String colonia;
+    @Column(name = "calle")
+    private String calle;
+    @Column(name = "numero_casa")
+    private String numeroCasa;
+    @Column(name = "estatus_vigencia")
+    private String estatusaVigencia;
     public Integer getIdCliente() {
         return idCliente;
     }
@@ -112,22 +115,6 @@ public class Cliente {
 
     public void setApellidoMaterno(String apellidoMaterno) {
         this.apellidoMaterno = apellidoMaterno;
-    }
-
-    public String getDireccion1() {
-        return direccion1;
-    }
-
-    public void setDireccion1(String direccion1) {
-        this.direccion1 = direccion1;
-    }
-
-    public String getDireccion2() {
-        return direccion2;
-    }
-
-    public void setDireccion2(String direccion2) {
-        this.direccion2 = direccion2;
     }
 
     public String getRFC() {
@@ -290,5 +277,35 @@ public class Cliente {
         this.regimen = regimen;
     }
 
+    public String getColonia() {
+        return colonia;
+    }
 
+    public void setColonia(String colonia) {
+        this.colonia = colonia;
+    }
+
+    public String getCalle() {
+        return calle;
+    }
+
+    public void setCalle(String calle) {
+        this.calle = calle;
+    }
+
+    public String getNumeroCasa() {
+        return numeroCasa;
+    }
+
+    public void setNumeroCasa(String numeroCasa) {
+        this.numeroCasa = numeroCasa;
+    }
+
+    public String getEstatusaVigencia() {
+        return estatusaVigencia;
+    }
+
+    public void setEstatusaVigencia(String estatusaVigencia) {
+        this.estatusaVigencia = estatusaVigencia;
+    }
 }
