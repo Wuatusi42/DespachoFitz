@@ -8,5 +8,5 @@ import java.util.Optional;
 
 @Repository
 public interface ClienteDAO extends JpaRepository<Cliente,Integer> {
-    Cliente findByPrimerNombreAndRFCAndSexoAndRegimen(String primerNombre, String RFC, String sexo, String regimen);
+    Cliente findByPrimerNombreAndRFCAndRegimen(String primerNombre, String RFC, String regimen);
 }

@@ -113,7 +113,17 @@ footer {
     margin-bottom: 8px;
 }
 
-.formulario input,
+.formulario input{
+ width: calc(16% - 20px);
+    padding: 5px;
+    margin: 10px 10px 10px 0;
+    border: none;
+    border-bottom: 2px solid #afb1b9;
+    border-radius: 0;
+    background-color: transparent;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
 .formulario select {
     width: calc(16% - 20px);
     padding: 5px;
@@ -124,12 +134,6 @@ footer {
     background-color: transparent;
     font-size: 16px;
     transition: border-color 0.3s;
-}
-
-.formulario input[id="direccion1"],
-.formulario input[id="direccion2"] {
-    width: 95%;
-    max-width: none;
 }
 
 .formulario button {

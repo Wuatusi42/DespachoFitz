@@ -22,17 +22,15 @@ public class ConsultaFisicasController {
     public String buscarCliente(
             @RequestParam(value = "primerNombre") String primerNombre,
             @RequestParam(value = "RFC") String RFC,
-            @RequestParam(value = "sexo") String sexo,
             Model model) {
         try {
-           Cliente cliente = clienteService.findByPrimerNombreAndRFCAndSexoAndRegimen(primerNombre,RFC,sexo,"Fisica");
+           Cliente cliente = clienteService.findByPrimerNombreAndRFCAndRegimen(primerNombre,RFC,"Fisica");
             if (cliente == null) {
                 model.addAttribute("mensaje", "No se encontraron resultados para los parámetros proporcionados.");
             }
             model.addAttribute("cliente", cliente);
             model.addAttribute("primerNombre", primerNombre);
             model.addAttribute("RFC", RFC);
-            model.addAttribute("sexo", sexo);
             return "ConsultaFisicos";
         } catch (Exception e) {
             model.addAttribute("mensaje", "Ocurrió un error inesperado: " + e.getMessage());

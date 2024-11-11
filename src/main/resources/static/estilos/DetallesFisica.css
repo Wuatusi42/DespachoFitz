@@ -36,11 +36,6 @@ html, body {
     transition: border-color 0.3s;
 }
 
-.formulario input[id="direccion1"],
-.formulario input[id="direccion2"] {
-    width: 95%;
-    max-width: none;
-}
 
 
 footer {

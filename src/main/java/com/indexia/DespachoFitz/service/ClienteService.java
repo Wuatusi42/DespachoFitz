@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ClienteService {
     public Cliente save(Cliente cliente);
-    public Cliente findByPrimerNombreAndRFCAndSexoAndRegimen(String primerNombre,String RFC,String sexo,String regimen);
+    public Cliente findByPrimerNombreAndRFCAndRegimen(String primerNombre,String RFC,String regimen);
     public Cliente findById(Integer idCliente);
     public boolean eliminarCliente(Integer idCliente);
 }
