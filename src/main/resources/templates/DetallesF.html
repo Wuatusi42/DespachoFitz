@@ -23,12 +23,10 @@
 </head>
 <body>
 <div class="cabeza">
-    <nav class="navbar">
-        <ul>
-            <li><a th:href="@{ConsultaFisicos}" class="nav-button">CONSULTA</a></li>
-            <li><a th:href="@{RegistroFisicas}" class="nav-button">REGISTRA</a></li>
-            <li><a th:href="@{/}" class="nav-button">LOGIN</a></li>
-        </ul>
+    <nav class="nav nav-pills nav-justified">
+        <a class="nav-link" aria-current="page" th:href="@{RegistroFisicas}">Registro</a>
+        <a class="nav-link active" aria-current="page" th:href="@{ConsultaFisicos}">Consulta</a>
+        <img th:src="@{/img/logo.png}" alt="Logo" style="width: 150px; height: 50px;">
     </nav>
 </div>
 <div class="form-container">
@@ -78,6 +76,7 @@
 
                 <input type="text" th:value="${cliente.nombreComercial}" name="nombreComercial" placeholder="Nombre Comercial" readonly="readonly">
                 <input type="text" th:value="${cliente.estatusaVigencia}" name="estatusaVigencia" placeholder="Estatus de actividad" readonly="readonly">
+                <input type="date" th:value="${cliente.fechaInicioOperaciones}" name="fechaInicioOperaciones" placeholder="Fecha Inicio De Operaciones" readonly="readonly">
             </fieldset>
             <br>
             <a th:href="@{/eliminarCliente/{idCliente}(idCliente=${cliente.idCliente})}" onclick="return confirm('¿Estás seguro de que deseas eliminar este cliente?');" class="Eliminar">Eliminar</a>

@@ -8,6 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Controller
 public class ConsultaFisicasController {
     @Autowired
@@ -24,11 +26,11 @@ public class ConsultaFisicasController {
             @RequestParam(value = "estatusaVigencia") String estatusaVigencia,
             Model model) {
         try {
-           Cliente cliente = clienteService.findByPrimerNombreAndEstatusaVigenciaAndRegimen(primerNombre,estatusaVigencia,"Fisica");
-            if (cliente == null) {
+           List<Cliente> clientes = clienteService.findByPrimerNombreAndEstatusaVigenciaAndRegimen(primerNombre,estatusaVigencia,"Fisica");
+            if (clientes == null) {
                 model.addAttribute("mensaje", "No se encontraron resultados para los parámetros proporcionados.");
             }
-            model.addAttribute("cliente", cliente);
+            model.addAttribute("clientes", clientes);
             model.addAttribute("primerNombre", primerNombre);
             model.addAttribute("estatusaVigencia", estatusaVigencia);
             return "ConsultaFisicos";

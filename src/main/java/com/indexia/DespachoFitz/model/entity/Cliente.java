@@ -2,7 +2,7 @@ package com.indexia.DespachoFitz.model.entity;
 
 import jakarta.persistence.*;
 
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 @Table(name = "cliente")
@@ -24,7 +24,7 @@ public class Cliente {
     @Column(name = "rfc")
     private String RFC;
     @Column(name = "fecha_nacimiento")
-    private Date fechaNacimiento;
+    private java.sql.Date fechaNacimiento;
     @Column(name = "ciudad")
     private String Ciudad;
     @Column(name = "estado")
@@ -50,7 +50,7 @@ public class Cliente {
     @Column(name = "nombre_comercial")
     private String nombreComercial;
     @Column(name = "fecha_inicio_operaciones")
-    private Date fechaInicioOperaciones;
+    private java.sql.Date fechaInicioOperaciones;
     @Column(name = "honorarios_mensuales")
     private Double honorariosMensuales;
     @Column(name = "e_firma")
@@ -69,6 +69,9 @@ public class Cliente {
     private String numeroCasa;
     @Column(name = "estatus_vigencia")
     private String estatusaVigencia;
+    @Column(name = "email")
+    private String email;
+
     public Integer getIdCliente() {
         return idCliente;
     }
@@ -125,13 +128,6 @@ public class Cliente {
         this.RFC = RFC;
     }
 
-    public Date getFechaNacimiento() {
-        return fechaNacimiento;
-    }
-
-    public void setFechaNacimiento(Date fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
-    }
 
     public String getCiudad() {
         return Ciudad;
@@ -229,13 +225,6 @@ public class Cliente {
         this.nombreComercial = nombreComercial;
     }
 
-    public Date getFechaInicioOperaciones() {
-        return fechaInicioOperaciones;
-    }
-
-    public void setFechaInicioOperaciones(Date fechaInicioOperaciones) {
-        this.fechaInicioOperaciones = fechaInicioOperaciones;
-    }
 
     public Double getHonorariosMensuales() {
         return honorariosMensuales;
@@ -307,5 +296,29 @@ public class Cliente {
 
     public void setEstatusaVigencia(String estatusaVigencia) {
         this.estatusaVigencia = estatusaVigencia;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
+    }
+
+    public void setFechaNacimiento(Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public Date getFechaInicioOperaciones() {
+        return fechaInicioOperaciones;
+    }
+
+    public void setFechaInicioOperaciones(Date fechaInicioOperaciones) {
+        this.fechaInicioOperaciones = fechaInicioOperaciones;
     }
 }

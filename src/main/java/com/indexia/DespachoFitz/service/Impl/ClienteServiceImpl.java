@@ -21,7 +21,7 @@ public class ClienteServiceImpl implements ClienteService {
     }
 
     @Override
-    public Cliente findByPrimerNombreAndEstatusaVigenciaAndRegimen(String primerNombre, String estatusaVigencia, String regimen) {
+    public List<Cliente> findByPrimerNombreAndEstatusaVigenciaAndRegimen(String primerNombre, String estatusaVigencia, String regimen) {
         return clienteDAO.findByPrimerNombreAndEstatusaVigenciaAndRegimen(primerNombre,estatusaVigencia,"Fisica");
     }
 

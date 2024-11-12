@@ -23,9 +23,18 @@ public class DetallesController {
     private ClienteService clienteService;
 
     @GetMapping("/Detalles")
-    public String detalles(Model model) {
+    public String detalles(@RequestParam("idCliente") Integer idCliente, Model model) {
+        Cliente cliente = clienteService.findById(idCliente);
+        if (cliente == null) {
+            model.addAttribute("mensaje", "Cliente no encontrado.");
+            return "ConsultaFisicos"; // Regresa a la vista de consulta si no encuentra el cliente
+        }
+
+        // Agrega el cliente al modelo para mostrar los detalles
+        model.addAttribute("cliente", cliente);
         return "DetallesF";
     }
+
     @GetMapping("/eliminarCliente/{idCliente}")
     public String eliminarCliente(@PathVariable("idCliente") Integer idCliente, Model model) {
         boolean clienteEliminado = clienteService.eliminarCliente(idCliente);
@@ -38,6 +47,7 @@ public class DetallesController {
 
         return "redirect:/ConsultaFisicos"; // Redirige a la vista correspondiente
     }
+
     @GetMapping("/Detalles/descargarExcel")
     public ResponseEntity<byte[]> descargarExcel(@RequestParam("idCliente") Integer idCliente) throws IOException {
         // Crear un libro de trabajo vacío
@@ -54,9 +64,6 @@ public class DetallesController {
         headers.setContentType(org.springframework.http.MediaType.APPLICATION_OCTET_STREAM);
 
         // Retornar el archivo para descarga
-        ResponseEntity<byte[]> response = new ResponseEntity<>(bos.toByteArray(), headers, HttpStatus.OK);
-
-        // Redirigir a la misma vista (Detalles)
-        return response;
+        return new ResponseEntity<>(bos.toByteArray(), headers, HttpStatus.OK);
     }
 }
