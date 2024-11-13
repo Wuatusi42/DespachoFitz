@@ -6,11 +6,33 @@
 </head>
 <body>
 <div th:fragment="navbarF">
-<nav class="navbar navbar-dark bg-primary">
-    <a class="navbar-brand" aria-current="page" th:href="@{RegistroFisicas}">Registro</a>
-    <a class="nav-link" th:href="@{ConsultaFisicos}">Consulta</a>
-    <img th:src="@{/img/logo.png}" alt="Logo" style="width: 150px; height: 50px;">
-</nav>
+    <!--<nav class="navbar navbar-dark bg-primary">
+        <div class="container-md">
+            <a class="navbar-brand" th:href="@{ConsultaFisicos}">Consulta</a>
+        </div>
+        <div class="container-md">
+            <a class="navbar-brand" th:href="@{RegistroFisicas}">Registro</a>
+        </div>
+        <div class="container-md">
+            <img th:src="@{/img/logo.png}" alt="Logo" style="width: 150px; height: 50px;">
+        </div>
+    </nav>--->
+    <nav class="navbar navbar-expand-lg navbar navbar-dark" style="background-color: #004a75;">
+        <div class="container-fluid">
+                <img th:src="@{/img/logo.png}" alt="Logo">
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" th:href="@{RegistroFisicas}">REGISTRO FISICAS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{ConsultaFisicos}">CONSULTA FISICAS</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
 </div>
 </body>
 </html>

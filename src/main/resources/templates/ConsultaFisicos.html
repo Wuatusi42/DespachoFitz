@@ -48,32 +48,32 @@
     <title>Consulta cuenta</title>
 </head>
 <body>
-    <nav class="nav nav-pills nav-justified">
-        <a class="nav-link" aria-current="page" th:href="@{RegistroFisicas}">Registro</a>
-        <a class="nav-link active" aria-current="page" th:href="@{ConsultaFisicos}">Consulta</a>
-        <img th:src="@{/img/logo.png}" alt="Logo" style="width: 150px; height: 50px;">
-    </nav>
+<div th:replace="navbarFisicos.html :: navbarF"></div>
 <br>
-<div class="form-container">
-    <div class="formulario">
-        <form th:action="@{/buscarCliente}" method="get">
-            <fieldset>
-                <legend>CONSULTA CUENTA PERSONA FISICA</legend>
+<div class="container">
+       <form th:action="@{/buscarCliente}" method="get">
+           <h2>CONSULTA CUENTA FISICA</h2>
+           <h3>CONSULTA CUENTA FISICA</h3>
                 <br>
                 <br>
-                <input type="text" id="primerNombre" name="primerNombre" placeholder="Primer Nombre" th:value="${primerNombre}" maxlength="45">
-                <select id="estatusaVigencia" name="estatusaVigencia" th:value="${estatusaVigencia}">
-                    <option value="">Estatus De Vigencia</option>
-                    <option value="Activo">Activo</option>
-                    <option value="Baja">Baja</option>
-                    <option value="En espera">En espera</option>
-                    <option value="Desafiliado">Desafiliado</option>
-                </select>
+               <div class="row mb-3">
+                    <div class="col">
+                        <input type="text" id="primerNombre" name="primerNombre" placeholder="Primer Nombre" th:value="${primerNombre}" maxlength="45" class="form-control">
+                    </div>
+                   <div class="col">
+                       <select class="form-select" id="estatusaVigencia" name="estatusaVigencia" th:value="${estatusaVigencia}">
+                           <option value="">Estatus De Vigencia</option>
+                           <option value="Activo">Activo</option>
+                           <option value="Baja">Baja</option>
+                           <option value="En espera">En espera</option>
+                           <option value="Desafiliado">Desafiliado</option>
+                       </select>
+                   </div>
+                </div>
                 <br>
-                <br>
-                <br>
-                <center><button type="submit">Buscar</button></center>
-            </fieldset>
+           <div class="d-grid gap-2 mt-4">
+               <button type="submit" class="btn btn-primary">Buscar</button>
+           </div>
         </form>
         <br>
         <table th:if="${clientes != null}">
@@ -90,10 +90,10 @@
             <tbody>
             <tr th:each="cliente : ${clientes}">
                 <td th:text="${cliente.idCliente}"></td>
-                <td th:text="${cliente.primerNombre != null ? cliente.primerNombre : 'null'}"> </td>
-                <td th:text="${cliente.RFC != null ? cliente.RFC : 'null'}"> </td>
-                <td th:text="${cliente.regimen != null ? cliente.regimen : 'null'}"> </td>
-                <td th:text="${cliente.estatusaVigencia != null ? cliente.estatusaVigencia : 'null'}"> </td>
+                <td th:text="${cliente.primerNombre}"> </td>
+                <td th:text="${cliente.RFC}"> </td>
+                <td th:text="${cliente.regimen}"> </td>
+                <td th:text="${cliente.estatusaVigencia}"> </td>
                 <td>
                     <a th:href="@{/verDetalles(idCliente=${cliente.idCliente})}" class="detalles" th:if="${cliente != null}">Detalles</a>
                 </td>
@@ -102,13 +102,8 @@
         </table>
         <br>
        <!-- <a th:href="@{/verDetalles(idCliente=${cliente.idCliente})}" class="detalles" th:if="${cliente != null}">Ver Detalles</a>-->
-    </div>
 </div>
-<div class="footer">
-    <footer>
-        <center><p>© 2024 FITZ & CRUZ, DESPACHO CONTABLE </p></center>
-    </footer>
-</div>
+<div th:replace="footer.html :: footer"></div>
 <script>
     window.onload = function() {
         // Verifica si la alerta existe

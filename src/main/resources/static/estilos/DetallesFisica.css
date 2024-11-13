@@ -50,66 +50,6 @@ footer {
     right: 0;
 }
 
-.navbar {
-    background-color: #155973;
-    overflow: hidden;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-}
-
-.navbar ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: space-around;
-}
-
-.nav-button {
-    display: block;
-    background-color: transparent;
-    border: none;
-    color: white;
-    text-align: center;
-    padding: 15px 25px;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s, transform 0.2s, border-bottom 0.3s;
-    position: relative;
-}
-
-.nav-button::after {
-    content: "";
-    display: block;
-    height: 2px;
-    background-color: #b0afb8;
-    width: 0;
-    transition: width 0.3s; /* Transición suave */
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%); /* Centrar la línea */
-}
-
-.nav-button:hover {
-    color: black; /* Cambiar color de texto al pasar el mouse */
-    background-color: #b0afb8; /* Color de fondo al pasar el mouse */
-    transform: scale(1.05); /* Efecto de aumento */
-}
-
-.nav-button:hover::after {
-    width: 100%;
-}
-
-.nav-button:focus {
-    outline: none;
-}
-
 .Descarga{
     width: 23%;
     padding: 10px;
