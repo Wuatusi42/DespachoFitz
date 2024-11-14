@@ -9,5 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface ClienteDAO extends JpaRepository<Cliente,Integer> {
+    List<Cliente> findByNombreComercialAndEstatusaVigenciaAndRegimen(String nombreComercial, String estatusaVigencia, String regimen);
     List<Cliente> findByPrimerNombreAndEstatusaVigenciaAndRegimen(String primerNombre, String estatusaVigencia, String regimen);
 }

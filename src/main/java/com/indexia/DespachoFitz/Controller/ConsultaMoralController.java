@@ -14,27 +14,40 @@ import java.util.List;
 public class ConsultaMoralController {
     @Autowired
     private ClienteService clienteService;
+
     @GetMapping("/ConsultaMoral")
-    public String vistaConsultaMoral(Model model){
+    public String vistaConsultaMoral(Model model) {
         return "ConsultaMoral";
     }
-    @GetMapping("/buscarClienteMoral")
-    public String buscarCliente(
-            @RequestParam(value = "primerNombre") String primerNombre,
-            @RequestParam(value = "estatusaVigencia") String estatusaVigencia,
-            Model model) {
-        try {
-            List<Cliente> clientes = clienteService.findByPrimerNombreAndEstatusaVigenciaAndRegimen(primerNombre,estatusaVigencia,"Moral");
-            if (clientes == null) {
-                model.addAttribute("mensaje", "No se encontraron resultados para los parámetros proporcionados.");
+
+        @GetMapping("/buscarClienteMoral")
+        public String buscarClienteMoral(
+                @RequestParam(value = "nombreComercial") String nombreComercial,
+                @RequestParam(value = "estatusaVigencia") String estatusaVigencia,
+                Model model) {
+            try {
+               List<Cliente> clientes = clienteService.findByNombreComercialAndEstatusaVigenciaAndRegimen(nombreComercial,estatusaVigencia,"Moral");
+                if (clientes == null) {
+                    model.addAttribute("mensaje", "No se encontraron resultados para los parámetros proporcionados.");
+                }
+                model.addAttribute("clientes", clientes);
+                model.addAttribute("nombreComercial", nombreComercial);
+                model.addAttribute("estatusaVigencia", estatusaVigencia);
+                return "ConsultaMoral";
+            } catch (Exception e) {
+                model.addAttribute("mensaje", "Ocurrió un error inesperado: " + e.getMessage());
+                return "ConsultaMoral";
             }
-            model.addAttribute("cliente", clientes);
-            model.addAttribute("primerNombre", primerNombre);
-            model.addAttribute("estatusaVigencia", estatusaVigencia);
-            return "ConsultaMoral";
-        } catch (Exception e) {
-            model.addAttribute("mensaje", "Ocurrió un error inesperado: " + e.getMessage());
-            return "ConsultaMoral";
+        }
+        @GetMapping("/verDetallesM")
+        public String verDetalles(@RequestParam("idCliente") Integer idCliente, Model model) {
+            Cliente cliente = clienteService.findById(idCliente);
+            if (cliente == null) {
+                model.addAttribute("mensaje", "Cliente no encontrado.");
+                return "ConsultaMoral";
+            }
+
+            model.addAttribute("cliente", cliente);
+            return "DetallesMoral";
         }
     }
-}

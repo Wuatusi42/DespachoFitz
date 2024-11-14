@@ -71,6 +71,8 @@ public class Cliente {
     private String estatusaVigencia;
     @Column(name = "email")
     private String email;
+    @Column(name = "año_fundacion")
+    private Date anoFundacion;
 
     public Integer getIdCliente() {
         return idCliente;

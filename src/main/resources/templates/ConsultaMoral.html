@@ -4,70 +4,142 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" th:href="@{/estilos/Consulta.css}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <style>
+        .detalles {
+    text-decoration: none;
+    display: inline-block; /* Asegura que el enlace se comporte como un botón */
+    width: 80px;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center; /* Centra el texto dentro del enlace */
+}
+
+.detalles:hover {
+    background-color: #45a049; /* Cambia el color al pasar el mouse */
+}
+        .alerta {
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-family: 'Arial', sans-serif;
+            font-size: 16px;
+            transition: opacity 1s ease-out;
+            opacity: 1; /* Inicialmente visible */
+        }
+
+        .alerta p {
+            margin: 0;
+        }
+
+        /* Alerta de error con fondo rojo y letras blancas */
+        .alerta-error {
+            background-color: #f44336; /* Rojo */
+            color: white; /* Letras blancas */
+            border: 1px solid #f44336; /* Borde rojo */
+        }
+
+    </style>
     <title>Consulta cuenta</title>
 </head>
 <body>
-<div class="cabeza">
-    <nav class="navbar">
-        <ul>
-            <li><a th:href="@{/ConsultaMoral}" class="nav-button">CONSULTA</a></li>
-            <li><a th:href="@{/RegistrarMoral}" class="nav-button">REGISTRA</a></li>
-            <li><a th:href="@{/}" class="nav-button">LOGIN</a></li>
-        </ul>
-    </nav>
-    <div class="img">
-        <img src="../static/img/logo.png" alt="Logo" class="logo">
-    </div>
-</div>
+<div th:replace="navbarMoral.html :: navbarM"></div>
 <br>
-<br>
-<br>
-<br>
-<div class="form-container">
-    <div class="formulario">
-        <form>
-            <fieldset>
-                <legend>CONSULTA CUENTA PERSONA MORAL</legend>
-                <br>
-                <br>
-                <input type="text" id="primerNombre" name="primerNombre" placeholder="Primer Nombre" th:value="${primerNombre}" required>
-                <input type="text" id="RFC" name="RFC" placeholder="RFC" th:value="${RFC}" required>
-                <br>
-                <br>
-                <br>
-                <center><button type="submit">Buscar</button></center>
-            </fieldset>
-        </form>
+<div class="container">
+    <form th:action="@{/buscarClienteMoral}" method="get">
+        <h2>CONSULTA CUENTA MORAL</h2>
+        <h3>CONSULTA CUENTA MORAL</h3>
         <br>
-        <table>
-            <thead>
-            <tr>
-                <th>No.Usuario</th>
-                <th>Nombre Completo</th>
-                <th>RFC</th>
-                <th>Regimen</th>
-                <th>Situacion Bancaria</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td></td>
-                <td> </td>
-                <td> </td>
-                <td> </td>
-                <td> </td>
-            </tr>
-            </tbody>
-        </table>
         <br>
-        <a th:href="@{/DetallesMoral}" class="Detalles">Mas Detalles</a>
-    </div>
+        <div class="row mb-3">
+            <div class="col">
+                <input type="text" id="nombreComercial" name="nombreComercial" placeholder="Nombre Comercial" th:value="${nombreComercial}" maxlength="45" class="form-control">
+            </div>
+            <div class="col">
+                <select class="form-select" id="estatusaVigencia" name="estatusaVigencia" th:value="${estatusaVigencia}">
+                    <option value="">Estatus De Vigencia</option>
+                    <option value="Activo">Activo</option>
+                    <option value="Baja">Baja</option>
+                    <option value="En espera">En espera</option>
+                    <option value="Desafiliado">Desafiliado</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="d-grid gap-2 mt-4">
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </div>
+    </form>
+    <br>
+    <table th:if="${clientes != null}">
+        <thead>
+        <tr>
+            <th>No.Usuario</th>
+            <th>Nombre Comercial</th>
+            <th>Segundo Nombre</th>
+            <th>Apellido Paterno</th>
+            <th>Estatus De Vigencia</th>
+            <th>Detalles</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="cliente : ${clientes}">
+            <td th:text="${cliente.idCliente}"></td>
+            <td th:text="${cliente.nombreComercial}"> </td>
+            <td th:text="${cliente.segundoNombre}"> </td>
+            <td th:text="${cliente.apellidoPaterno}"> </td>
+            <td th:text="${cliente.estatusaVigencia}"> </td>
+            <td>
+                <a th:href="@{/verDetallesM(idCliente=${cliente.idCliente})}" class="detalles" th:if="${cliente != null}">Detalles</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <br>
+    <!-- <a th:href="@{/verDetalles(idCliente=${cliente.idCliente})}" class="detalles" th:if="${cliente != null}">Ver Detalles</a>-->
 </div>
-<div class="footer">
-    <footer>
-        <center><p>:: 2024 :: DESPACHO ::</p></center>
-    </footer>
+<script>
+    window.onload = function() {
+        // Verifica si la alerta existe
+        var alerta = document.getElementById("alerta");
+        if (alerta) {
+            // Después de 3 segundos, empieza a desvanecer la alerta
+            setTimeout(function() {
+                alerta.style.opacity = 0; // Hace que la alerta desaparezca gradualmente
+            }, 3000); // 3000 milisegundos = 3 segundos
+        }
+    }
+</script>
+<div class="pie">
+    <div th:replace="footer.html :: footer"></div>
 </div>
+<script>
+    // Crear una nueva instancia de la fecha actual
+    var fechaActual = new Date();
+
+    // Formatear la fecha en un formato legible
+    var fechaFormateada = fechaActual.toLocaleDateString('es-ES');
+
+    // Mostrar la fecha en el elemento con id="fecha"
+    document.getElementById('fecha').textContent = fechaFormateada;
+
+    // Mostrar el popper cuando se hace clic en el botón
+    var popoverButton = document.getElementById('popoverButton');
+    var message = document.getElementById('message');
+
+    popoverButton.addEventListener('click', function() {
+        if (message.style.display === 'none' || message.style.display === '') {
+            message.style.display = 'block';
+        } else {
+            message.style.display = 'none';
+        }
+    });
+</script>
 </body>
 </html>
