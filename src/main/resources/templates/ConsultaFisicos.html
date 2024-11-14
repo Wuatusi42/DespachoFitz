@@ -80,9 +80,9 @@
             <thead>
             <tr>
                 <th>No.Usuario</th>
-                <th>Nombre Completo</th>
-                <th>RFC</th>
-                <th>Regimen</th>
+                <th>Primer Nombre</th>
+                <th>Segundo Nombre</th>
+                <th>Apellido Paterno</th>
                 <th>Estatus De Vigencia</th>
                 <th>Detalles</th>
             </tr>
@@ -91,8 +91,8 @@
             <tr th:each="cliente : ${clientes}">
                 <td th:text="${cliente.idCliente}"></td>
                 <td th:text="${cliente.primerNombre}"> </td>
-                <td th:text="${cliente.RFC}"> </td>
-                <td th:text="${cliente.regimen}"> </td>
+                <td th:text="${cliente.segundoNombre}"> </td>
+                <td th:text="${cliente.apellidoPaterno}"> </td>
                 <td th:text="${cliente.estatusaVigencia}"> </td>
                 <td>
                     <a th:href="@{/verDetalles(idCliente=${cliente.idCliente})}" class="detalles" th:if="${cliente != null}">Detalles</a>
@@ -103,7 +103,6 @@
         <br>
        <!-- <a th:href="@{/verDetalles(idCliente=${cliente.idCliente})}" class="detalles" th:if="${cliente != null}">Ver Detalles</a>-->
 </div>
-<div th:replace="footer.html :: footer"></div>
 <script>
     window.onload = function() {
         // Verifica si la alerta existe
@@ -116,5 +115,8 @@
         }
     }
 </script>
+<div class="pie">
+    <div th:replace="footer.html :: footer"></div>
+</div>
 </body>
 </html>

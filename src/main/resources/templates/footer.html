@@ -5,9 +5,31 @@
     <meta charset="UTF-8">
 </head>
 <body>
-<div class="footer" th:fragment="footer">
-    <footer>
-        <center><p>© 2024 FITZ & CRUZ, DESPACHO CONTABLE </p></center>
+<div th:fragment="footer">
+    <footer class="footer">
+        <center><p>© 2024 FITZ & CRUZ, DESPACHO CONTABLE</p></center>
+
+        <!-- Contenedor para las imágenes con texto alineado -->
+        <div class="footer-images">
+            <div class="image-text-container">
+                <img th:src="@{../img/facebook.png}" alt="Sticker 1" class="sticker">
+                <p class="text">Despacho Fitz & Cruz</p>
+            </div>
+
+            <div class="image-text-container">
+                <img th:src="@{../img/map.png}" alt="Sticker 2" class="sticker">
+                <p class="text">Miguel Hidalgo #9 Colonia centro Taxco</p>
+            </div>
+
+            <div class="image-text-container">
+                <img th:src="@{../img/whatsapp.png}" alt="Sticker 3" class="sticker">
+                <p class="text">762-688-1855</p>
+            </div>
+            <div class="image-text-container">
+                <img th:src="@{../img/gmail.png}" alt="Sticker 3" class="sticker">
+                <p class="text">despachofitzcruz@gmail.com</p>
+            </div>
+        </div>
     </footer>
 </div>
 </body>

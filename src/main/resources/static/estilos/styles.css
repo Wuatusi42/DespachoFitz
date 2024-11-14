@@ -143,5 +143,14 @@ label{
     cursor: pointer;
     font-weight: bold;
 }
+.image-text-container {
+    display: flex;
+    align-items: center;
+}
+.footer-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 
+}
 

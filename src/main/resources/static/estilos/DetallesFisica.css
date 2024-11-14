@@ -59,4 +59,14 @@ footer {
     cursor: pointer;
     background-color: rgb(112, 193, 31);
 }
+.image-text-container {
+    display: flex;
+    align-items: center;
+}
+.footer-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+}
 

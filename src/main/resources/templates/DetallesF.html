@@ -26,64 +26,128 @@
 <div class="cabeza">
     <div th:replace="navbarFisicos.html :: navbarF"></div>
 </div>
-<div class="form-container">
-    <div class="formulario">
-        <h2>Detalles</h2>
-        <form method="get">
-            <fieldset>
-                <legend>Información del Cliente</legend>
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <br>
+       <form  method="get">
 
-                <input type="text" name="primerNombre" th:value="${cliente.primerNombre}"  placeholder="Primer Nombre" readonly="readonly" >
+           <div class="row mb-3">
+               <div class="col">
+                   <input type="text" name="primerNombre" th:value="${cliente.primerNombre}" class="form-control" placeholder="Primer Nombre" readonly="readonly" >
+               </div>
+               <div class="col">
+                   <input type="text" th:value="${cliente.segundoNombre}" name="segundoNombre" class="form-control" placeholder="Segundo Nombre" readonly="readonly">
+               </div>
+               <div class="col">
+                   <input type="text" th:value="${cliente.tercerNombre}" name="tercerNombre" class="form-control" placeholder="Tercer Nombre" readonly="readonly">
+               </div>
 
-                <input type="text" th:value="${cliente.segundoNombre}" name="segundoNombre" placeholder="Segundo Nombre" readonly="readonly">
+           </div>
 
-                <input type="text" th:value="${cliente.tercerNombre}" name="tercerNombre" placeholder="Tercer Nombre" readonly="readonly">
+           <div class="row mb-3">
+               <div class="col">
+                   <input type="text" th:value="${cliente.apellidoPaterno}" name="apellidoPaterno" class="form-control" placeholder="Apellido Paterno" readonly="readonly">
+               </div>
+               <div class="col">
+                   <input type="text" th:value="${cliente.apellidoMaterno}" name="apellidoMaterno" class="form-control" placeholder="Apellido Materno" readonly="readonly">
+               </div>
+               <div class="col">
+                   <input type="text" name="pais" th:value="${cliente.pais}" class="form-control" placeholder="pais" readonly="readonly">
+               </div>
+           </div>
+           <!-- Añadir más campos siguiendo la estructura de filas y columnas -->
+           <div class="row mb-3">
+               <div class="col">
+                   <input type="text" name="RFC" th:value="${cliente.RFC}" class="form-control" placeholder="RFC" readonly="readonly">
+               </div>
+               <div class="col">
+                   <input type="text" name="Ciudad" th:value="${cliente.Ciudad}" class="form-control" placeholder="Ciudad" readonly="readonly">
+               </div>
+               <div class="col">
+                   <input type="text" name="Estado" th:value="${cliente.Estado}" class="form-control" placeholder="Estado" readonly="readonly">
+               </div>
 
-                <input type="text" th:value="${cliente.apellidoPaterno}" name="apellidoPaterno" placeholder="Apellido Paterno" readonly="readonly">
+           </div>
+           <div class="row mb-3">
+               <div class="col">
+                   <input type="text" name="colonia" th:value="${cliente.colonia}" class="form-control" placeholder="Colonia" readonly="readonly">
+               </div>
+               <div class="col">
+                   <input type="text" name="calle" th:value="${cliente.calle}" class="form-control" placeholder="Calle" readonly="readonly">
+               </div>
+               <div class="col">
+                   <input type="text" name="numeroCasa" th:value="${cliente.numeroCasa}" class="form-control" placeholder="Numero De Casa"  readonly="readonly">
+               </div>
+           </div>
+           <div class="row mb-3">
+               <div class="col">
+                   <input type="number" name="edad" th:value="${cliente.edad}" class="form-control" placeholder="edad" readonly="readonly">
+               </div>
+               <div class="col">
+                   <input type="text" name="CURP" th:value="${cliente.CURP}" class="form-control" placeholder="CURP" readonly="readonly">
+               </div>
+               <div class="col">
+                   <input type="text" name="telefono1" th:value="${cliente.telefono1}" class="form-control" placeholder="telefono 1" readonly="readonly">
+               </div>
 
-                <input type="text" th:value="${cliente.apellidoMaterno}" name="apellidoMaterno" placeholder="Apellido Materno" readonly="readonly">
-                <input type="text" th:value="${cliente.colonia}" placeholder="colonia" readonly="readonly">
-                <input type="text" th:value="${cliente.calle}" placeholder="calle" readonly="readonly">
-                <input type="text" th:value="${cliente.numeroCasa}" placeholder="Numero De Casa" readonly="readonly">
+           </div>
 
-                <input type="text" th:value="${cliente.RFC}" placeholder="RFC" readonly="readonly">
+           <div class="row mb-3">
+               <div class="col">
+                   <input type="text" name="telefono2" th:value="${cliente.telefono2}" class="form-control" placeholder="telefono 2" readonly="readonly">
+               </div>
+               <div class="col">
+                   <input type="text" name="actividadEconomica" th:value="${cliente.actividadEconomica}" class="form-control" placeholder="Actividad Economica" readonly="readonly">
+               </div>
+               <div class="col">
+                   <input type="number" name="ingresosMensuales" th:value="${cliente.ingresosMensuales}" class="form-control" placeholder="Ingresos Mensuales" step="0.000000001" readonly="readonly">
+               </div>
+
+           </div>
+           <div class="row mb-3">
+               <div class="col">
+                   <input type="text" name="situacionBancaria" th:value="${cliente.situacionBancaria}" class="form-control" placeholder="Situacion Bancaria" readonly="readonly">
+               </div>
+               <div class="col">
+                   <input type="text" name="estatusPadron" th:value="${cliente.estatusPadron}" class="form-control" placeholder="Estatus En El Padron" readonly="readonly">
+               </div>
+               <div class="col">
+                   <input type="text" name="nombreComercial" th:value="${cliente.nombreComercial}" class="form-control" placeholder="Nombre Comercial" readonly="readonly">
+               </div>
+           </div>
+           <div class="row mb-3">
+               <div class="col">
+                   <input type="email" name="email" th:value="${cliente.email}" class="form-control" placeholder="Email" readonly="readonly">
+               </div>
+               <div class="col">
+                   <input type="text" th:value="${cliente.estatusaVigencia}" name="estatusaVigencia" class="form-control" placeholder="Estatus de actividad" readonly="readonly">
+               </div>
+               <div class="col">
+                   <input type="text" th:value="${cliente.sexo}" name="sexo" class="form-control" placeholder="sexo" readonly="readonly">
+               </div>
+           </div>
+           <div class="row mb-3">
+               <div class="col">
+                   <label>Regimen</label>
+                   <input type="text" th:value="${cliente.regimen}" name="regimen" class="form-control" placeholder="regimen" readonly="readonly">
+               </div>
+               <div class="col">
+                   <label>Fecha De Nacimiento</label>
+                   <input type="date" th:value="${cliente.fechaNacimiento}" name="fechaNacimiento" class="form-control" placeholder="Fecha De Nacimiento" readonly="readonly">
+               </div>
+               <div class="col">
+                   <label>Fecha De Nacimiento</label>
+                   <input type="date" th:value="${cliente.fechaInicioOperaciones}" name="fechaInicioOperaciones" class="form-control" placeholder="Fecha De Inicio De Operaciones" readonly="readonly">
+               </div>
+           </div>
+           <a th:href="@{/eliminarCliente/{idCliente}(idCliente=${cliente.idCliente})}" onclick="return confirm('¿Estás seguro de que deseas eliminar este cliente?');" class="Eliminar">Eliminar</a>
 
 
-                <input type="text" th:value="${cliente.Ciudad}" placeholder="Ciudad" readonly="readonly">
-
-                <input type="text" th:value="${cliente.Estado}" placeholder="Estado" readonly="readonly">
-
-                <input type="text" th:value="${cliente.pais}" name="pais" placeholder="País" readonly="readonly">
-
-                <input type="text" th:value="${cliente.sexo}" name="sexo" placeholder="sexo" readonly="readonly">
-
-                <input type="number" th:value="${cliente.edad}" name="edad" placeholder="Edad" readonly="readonly">
-
-                <input type="tel" th:value="${cliente.telefono1}" name="telefono1" placeholder="Teléfono 1" readonly="readonly">
-
-                <input type="tel" th:value="${cliente.telefono2}" name="telefono2" placeholder="Teléfono 2" readonly="readonly">
-
-                <input type="text" th:value="${cliente.CURP}" name="CURP" placeholder="CURP" readonly="readonly">
-
-                <input type="text" th:value="${cliente.actividadEconomica}" name="actividadEconomica" placeholder="Actividad Económica" readonly="readonly">
-
-                <input type="number" th:value="${cliente.ingresosMensuales}" name="ingresosMensuales" placeholder="Ingresos Mensuales" readonly="readonly">
-
-                <input type="text" th:value="${cliente.estatusPadron}" name="estatusPadron" placeholder="Estatus en el Padrón" readonly="readonly">
-
-                <input type="text" th:value="${cliente.nombreComercial}" name="nombreComercial" placeholder="Nombre Comercial" readonly="readonly">
-                <input type="text" th:value="${cliente.estatusaVigencia}" name="estatusaVigencia" placeholder="Estatus de actividad" readonly="readonly">
-                <input type="date" th:value="${cliente.fechaInicioOperaciones}" name="fechaInicioOperaciones" placeholder="Fecha Inicio De Operaciones" readonly="readonly">
-            </fieldset>
-            <br>
-            <a th:href="@{/eliminarCliente/{idCliente}(idCliente=${cliente.idCliente})}" onclick="return confirm('¿Estás seguro de que deseas eliminar este cliente?');" class="Eliminar">Eliminar</a>
-
-
-            <a th:href="@{/Detalles/descargarExcel(idCliente=${cliente.idCliente})}" class="Descarga">Descargar Información</a>
-        </form>
-        </form>
+           <a th:href="@{/Detalles/descargarExcel(idCliente=${cliente.idCliente})}" class="Descarga">Descargar Información</a>
+       </form>
     </div>
-</div>
 <div th:replace="footer.html :: footer"></div>
 </body>
 </html>
