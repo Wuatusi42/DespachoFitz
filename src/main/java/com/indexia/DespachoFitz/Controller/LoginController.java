@@ -1,6 +1,8 @@
 package com.indexia.DespachoFitz.Controller;
 
+import com.indexia.DespachoFitz.model.entity.Usuario;
 import com.indexia.DespachoFitz.service.UsuarioService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,10 +21,11 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String validateLogin(@RequestParam String nombre, @RequestParam String password, Model model) {
+    public String validateLogin(@RequestParam String nombre, @RequestParam String password, Model model, HttpSession session) {
         boolean valid = usuarioService.login(nombre, password);
         if (valid) {
             model.addAttribute("showModal", true); //validar mosal
+            session.setAttribute("nombreUsuario",nombre);
             return "index"; // Regresa a la página de login
         } else {
             model.addAttribute("error", "Credenciales inválidas.");//eeror credenciales

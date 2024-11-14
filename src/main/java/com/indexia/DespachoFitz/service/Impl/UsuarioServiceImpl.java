@@ -23,4 +23,10 @@ public class UsuarioServiceImpl implements UsuarioService {
         Optional<Usuario> usuarioOptional = findByNombreUsuario(username);
         return usuarioOptional.isPresent() && usuarioOptional.get().getPasswordUsuario().equals(password);
     }
+
+    @Override
+    public Usuario findById(Integer idUsuario) {
+        return usuarioDAO.findById(idUsuario).orElse(null);
+    }
+
 }

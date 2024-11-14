@@ -21,7 +21,16 @@
                     </li>
                 </ul>
                 <div>
-                    <i class="bi bi-person"></i>
+                   <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Bottom popover" popovertarget="message" popovertargetaction="toggle">
+                        <i class="bi bi-person" style="width:50px;"></i>
+                       <div id="message" popover="manual" style="border-width:2px; border-color:grey; border-radius:20px;  margin-rigth:40px;">
+                           <br>
+                           <p th:text="'Nombre de Usuario: ' + ${session.nombreUsuario}"></p>
+                           <hr>
+                           <p>Fecha actual: <span id="fecha"></span></p>
+                       </div>
+                    </button>
+
                 </div>
 
             </div>
@@ -29,19 +38,27 @@
     </nav>
 </div>
 <script>
-    function togglePopup() {
-        var popup = document.getElementById("info-popup");
-        popup.style.display = (popup.style.display === "none" || popup.style.display === "") ? "block" : "none";
-    }
+     // Crear una nueva instancia de la fecha actual
+     var fechaActual = new Date();
 
-    // Cierra el popup si se hace clic fuera de él
-    window.addEventListener("click", function(event) {
-        var popup = document.getElementById("info-popup");
-        var profileImage = document.querySelector(".profile-image");
-        if (event.target !== popup && event.target !== profileImage) {
-            popup.style.display = "none";
-        }
-    });
+     // Formatear la fecha en un formato legible
+     var fechaFormateada = fechaActual.toLocaleDateString('es-ES');
+
+     // Mostrar la fecha en el elemento con id="fecha"
+     document.getElementById('fecha').textContent = fechaFormateada;
+
+     // Mostrar el popper cuando se hace clic en el botón
+     var popoverButton = document.getElementById('popoverButton');
+     var message = document.getElementById('message');
+
+     popoverButton.addEventListener('click', function() {
+         if (message.style.display === 'none' || message.style.display === '') {
+             message.style.display = 'block';
+         } else {
+             message.style.display = 'none';
+         }
+     });
 </script>
+
 </body>
 </html>
