@@ -153,4 +153,19 @@ label{
     gap: 20px;
 
 }
+.modal-content {
+    display: flex;
+    justify-content: center; /* Centra los botones */
+    gap: 10px; /* Espacio entre los botones */
+}
 
+#fisicas, #moral {
+    padding: 10px 20px;
+    background-color: #004a75;
+    color: #fff;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center; /* Asegura que el texto esté centrado */
+}
