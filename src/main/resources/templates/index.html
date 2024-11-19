@@ -11,87 +11,65 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/estilos/styles.css}">
     <style>
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+
+
+        /* Navbar siempre arriba */
+        nav {
+            flex-shrink: 0;
         }
-        .modal-content {
-            background-color: #fff;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 300px;
-            text-align: center;
+
+        .carrusel,
+        .login {
+            flex: 1; /* Ocupan la mitad de la pantalla */
+            display: flex;
+            align-items: center; /* Centrar contenido verticalmente */
+            justify-content: center; /* Centrar contenido horizontalmente */
+            box-sizing: border-box;
+            overflow: hidden;
         }
-        .error {
-            color: red;
-            margin: 10px 0;
+
+        /* Estilos adicionales para el carrusel */
+        .carrusel img {
+            max-width: 100%;
+            height: auto;
+            object-fit: cover;
         }
+
+
     </style>
 </head>
 <body>
-<div class="carrusel">
-    <div class="carrusel-imagenes">
-        <img th:src="@{img/Img1.jpg}" alt="Imagen 1">
-        <img th:src="@{img/Img2.jpg}" alt="Imagen 2">
-        <img th:src="@{img/Img4.jpg}" alt="Imagen 3">
-        <img th:src="@{img/pedido-6168.jpg}" alt="Imagen 4">
-    </div>
-</div>
+<div th:replace="navbarFisicos.html :: navbarF"></div>
+
 <div class="container">
-    <div th:replace="NavbarL.html :: navbarL"></div>
-    <hr>
-    <div>
-        <!--<center><h2>BIENVENIDO AL DESPACHO<br>FITZ Y CRUZ</h2></center>-->
+    <div class="carrusel">
+        <div class="carrusel-imagenes">
+            <img th:src="@{img/Img1.jpg}" alt="Imagen 1">
+            <img th:src="@{img/Img2.jpg}" alt="Imagen 2">
+            <img th:src="@{img/Img4.jpg}" alt="Imagen 3">
+            <img th:src="@{img/pedido-6168.jpg}" alt="Imagen 4">
+        </div>
     </div>
     <div class="login">
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
         <form th:action="@{/login}" method="post">
-            <center>
-                <label for="nombre"> Nombre de usuario </label>
-                <br>
-                <br>
-                <input type="text" id="nombre" name="nombre" required placeholder="Nombre de usuario">
-                <br>
-                <label for="password">Password</label>
-                <br>
-                <br>
-                <div>
-                    <input type="password" id="password" name="password" required placeholder="password">
-                    <br>
-                    <button type="button" id="togglePassword" class="toggle-password">👁️</button>
-                </div>
-                <br>
-                <button type="submit" id="loginBoton">LOGIN</button>
-                <div th:if="${showModal}" id="myModal" class="modal" style="display: block;">
-                    <div class="modal-content">
-                        <br>
-                        <h5>ELIGA CON QUE TIPO DE PERSONA VA A TRABAJAR</h5>
-                        <hr>
-                        <center>
-                        <a style="text-decoration: none;" th:href="@{RegistroFisicas}" class="loginBoton" id="fisicas">FISICA</a>
-                        <a style="text-decoration: none;" th:href="@{/RegistrarMoral}" class="loginBoton" id="moral">MORAL</a>
-                        </center>
-                    </div>
-                </div>
-                <div th:if="${error}" class="error">
-                    <p th:text="${error}"></p>
-                </div>
-            </center>
+            <h2>Iniciar sesión</h2>
+            <label for="nombre">Nombre de usuario</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Nombre de usuario">
+            <label for="password">Contraseña</label>
+            <div>
+                <input type="password" id="password" name="password" required placeholder="Contraseña">
+                <button type="button" id="togglePassword" class="toggle-password">👁️</button>
+            </div>
+            <button type="submit" id="loginBoton">LOGIN</button>
+            <div th:if="${error}" class="error">
+                <p th:text="${error}"></p>
+            </div>
         </form>
     </div>
 </div>
+
 <div th:replace="footer.html :: footer"></div>
+
 <script>
     const passwordInput = document.getElementById('password');
     const togglePasswordButton = document.getElementById('togglePassword');
@@ -99,29 +77,8 @@
     togglePasswordButton.addEventListener('click', function () {
         const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
         passwordInput.setAttribute('type', type);
-        // Cambia el icono del botón
         this.textContent = type === 'password' ? '👁️' : '🚫';
     });
-
-    // Función para cerrar el modal
-    function closeModal() {
-        document.getElementById('myModal').style.display = "none"; // Oculta el modal
-    }
-
-    // Cerrar el modal si el usuario hace clic fuera de él
-    window.onclick = function(event) {
-        if (event.target === document.getElementById('myModal')) {
-            closeModal();
-        }
-    };
-
-    // Muestra el modal si se pasó el atributo "showModal" desde el controlador
-    const showModal = /*[[${showModal}]]*/ false; // Thymeleaf para obtener el valor
-    if (showModal) {
-        document.getElementById('myModal').style.display = "block"; // Muestra el modal si es verdadero
-    }
 </script>
 </body>
 </html>
-
-
