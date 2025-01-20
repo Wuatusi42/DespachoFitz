@@ -10,36 +10,53 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" th:href="@{/estilos/styles.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{/estilos/footer.css}">
+
     <style>
+        .modal {
+         display: none;
+         position: fixed;
+         z-index: 1;
+         left: 0;
+         top: 0;
+         width: 100%;
+         height: 100%;
+         background-color: rgba(0, 0, 0, 0.5);
+         }
+     nav {
+         flex-shrink: 0;
+     }
+     .modal-content {
+            background-color: #fff;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 300px;
+            text-align: center;
+ }
 
+     .carrusel,
+     .login {
+         flex: 1; /* Ocupan la mitad de la pantalla */
+         display: flex;
+         align-items: center; /* Centrar contenido verticalmente */
+         justify-content: center; /* Centrar contenido horizontalmente */
+         box-sizing: border-box;
+         overflow: hidden;
+     }
 
-        /* Navbar siempre arriba */
-        nav {
-            flex-shrink: 0;
-        }
-
-        .carrusel,
-        .login {
-            flex: 1; /* Ocupan la mitad de la pantalla */
-            display: flex;
-            align-items: center; /* Centrar contenido verticalmente */
-            justify-content: center; /* Centrar contenido horizontalmente */
-            box-sizing: border-box;
-            overflow: hidden;
-        }
-
-        /* Estilos adicionales para el carrusel */
-        .carrusel img {
-            max-width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
+     /* Estilos adicionales para el carrusel */
+     .carrusel img {
+         max-width: 100%;
+         height: auto;
+         object-fit: cover;
+     }
 
 
     </style>
 </head>
 <body>
-<div th:replace="navbarFisicos.html :: navbarF"></div>
+<div th:replace="navbarL.html :: navbarL"></div>
 
 <div class="container">
     <div class="carrusel">
@@ -60,7 +77,19 @@
                 <input type="password" id="password" name="password" required placeholder="Contraseña">
                 <button type="button" id="togglePassword" class="toggle-password">👁️</button>
             </div>
-            <button type="submit" id="loginBoton">LOGIN</button>
+            <br>
+            <button type="submit" id="loginBoton" style="background: linear-gradient(to bottom, #004a75, #00658b, #007b97, #00a1b3);">LOGIN</button>
+            <div th:if="${showModal}" id="myModal" class="modal" style="display: block;">
+                <div class="modal-content">
+                    <br>
+                    <h5>ELIGA CON QUE TIPO DE PERSONA VA A TRABAJAR</h5>
+                    <hr>
+                    <center>
+                        <a style="text-decoration: none;" th:href="@{RegistroFisicas}" class="loginBoton" id="fisicas">FISICA</a>
+                        <a style="text-decoration: none;" th:href="@{/RegistrarMoral}" class="loginBoton" id="moral">MORAL</a>
+                    </center>
+                </div>
+            </div>
             <div th:if="${error}" class="error">
                 <p th:text="${error}"></p>
             </div>

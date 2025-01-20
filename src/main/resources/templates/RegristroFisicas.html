@@ -56,76 +56,146 @@
 <div class="container">
     <div th:if="${successMessage}" class="success-message" id="successMessage" th:text="${successMessage}"></div>
     <div class="card">
-        <div class="card-header"  style="background: linear-gradient(to bottom, #004a75, #00658b, #007b97, #00a1b3);">Registro de Cliente</div>
+        <div class="card-header" style="background: linear-gradient(to bottom, #004a75, #00658b, #007b97, #00a1b3);">
+            Registro de Cliente
+        </div>
         <div class="card-body">
             <form th:action="@{/RegistroFisicas}" th:object="${cliente}" method="post">
                 <h4 class="text-primary">Información del Cliente</h4>
                 <div class="row mb-3">
                     <div class="col-md-4">
-                        <input type="text" th:field="*{primerNombre}" class="form-control" placeholder="Primer Nombre" maxlength="45">
+                        <input type="text" th:field="*{inicialName}" class="form-control" placeholder="Primer Nombre"
+                               maxlength="45" required>
                     </div>
                     <div class="col-md-4">
-                        <input type="text" th:field="*{segundoNombre}" class="form-control" placeholder="Segundo Nombre" maxlength="45">
+                        <input type="text" th:field="*{secondName}" class="form-control" placeholder="Segundo Nombre"
+                               maxlength="45" required>
                     </div>
                     <div class="col-md-4">
-                        <input type="text" th:field="*{tercerNombre}" class="form-control" placeholder="Tercer Nombre" maxlength="60">
+                        <input type="text" th:field="*{threeName}" class="form-control" placeholder="Tercer Nombre"
+                               maxlength="60">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-4">
-                        <input type="text" th:field="*{apellidoPaterno}" class="form-control" placeholder="Apellido Paterno" maxlength="30">
+                        <input type="text" th:field="*{paternalSurname}" class="form-control"
+                               placeholder="Apellido Paterno" maxlength="30" required>
                     </div>
                     <div class="col-md-4">
-                        <input type="text" th:field="*{apellidoMaterno}" class="form-control" placeholder="Apellido Materno" maxlength="45">
+                        <input type="text" th:field="*{maternalSurname}" class="form-control"
+                               placeholder="Apellido Materno" maxlength="45" required>
                     </div>
                     <div class="col-md-4">
-                        <input type="text" th:field="*{pais}" class="form-control" placeholder="País" maxlength="50">
+                        <input type="text" th:field="*{country}" class="form-control" placeholder="País" maxlength="50"
+                               required>
                     </div>
                 </div>
                 <h4 class="text-primary">Detalles del Domicilio</h4>
                 <div class="row mb-3">
                     <div class="col-md-4">
-                        <input type="text" th:field="*{RFC}" class="form-control" placeholder="RFC" maxlength="13">
+                        <input type="text" th:field="*{rfc}" class="form-control" placeholder="RFC" maxlength="13"
+                               required>
                     </div>
                     <div class="col-md-4">
-                        <input type="text" th:field="*{Ciudad}" class="form-control" placeholder="Ciudad" maxlength="45">
+                        <input type="text" th:field="*{country}" class="form-control" placeholder="Ciudad" maxlength="45"
+                               required>
                     </div>
                     <div class="col-md-4">
-                        <input type="text" th:field="*{Estado}" class="form-control" placeholder="Estado" maxlength="45">
+                        <input type="text" th:field="*{state}" class="form-control" placeholder="Estado" maxlength="45"
+                               required>
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-4">
-                        <input type="text" th:field="*{colonia}" class="form-control" placeholder="Colonia" maxlength="60">
+                        <input type="text" th:field="*{cologne}" class="form-control" placeholder="Colonia"
+                               maxlength="60" required>
                     </div>
                     <div class="col-md-4">
-                        <input type="text" th:field="*{calle}" class="form-control" placeholder="Calle" maxlength="60">
+                        <input type="text" th:field="*{street}" class="form-control" placeholder="Calle" maxlength="60"
+                               required>
                     </div>
                     <div class="col-md-4">
-                        <input type="text" pattern="[0-9#]+" th:field="*{numeroCasa}" class="form-control" placeholder="Número de Casa" maxlength="4">
+                        <input type="text" pattern="[0-9#]+" th:field="*{numberHome}" class="form-control"
+                               placeholder="Número de Casa" maxlength="4">
                     </div>
                 </div>
                 <h4 class="text-primary">Datos Adicionales</h4>
                 <div class="row mb-3">
                     <div class="col-md-4">
-                        <input type="number" th:field="*{edad}" class="form-control" placeholder="Edad" maxlength="3">
+                        <input type="number" th:field="*{ages}" class="form-control" placeholder="Edad" maxlength="3"
+                               required>
                     </div>
                     <div class="col-md-4">
-                        <input type="text" th:field="*{CURP}" class="form-control" placeholder="CURP" maxlength="18">
+                        <input type="text" th:field="*{CURP}" class="form-control" placeholder="CURP" maxlength="18"
+                               required>
                     </div>
                     <div class="col-md-4">
-                        <input type="text" pattern="[\+]?[0-9]+" th:field="*{telefono1}" class="form-control" placeholder="Teléfono 1" maxlength="13">
+                        <input type="text" pattern="[\+]?[0-9]+" th:field="*{phone1}" class="form-control"
+                               placeholder="Teléfono 1" maxlength="13">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <div class="col-md-4">
-                        <input type="text" pattern="[\+]?[0-9]+" th:field="*{telefono2}" class="form-control" placeholder="Teléfono 2" maxlength="13">
+                        <input type="text" pattern="[\+]?[0-9]+" th:field="*{phone2}" class="form-control"
+                               placeholder="Teléfono 2" maxlength="13">
                     </div>
                     <div class="col-md-4">
-                        <input type="text" th:field="*{actividadEconomica}" class="form-control" placeholder="Actividad Económica" maxlength="500">
+                        <input type="text" th:field="*{activityEconomy}" class="form-control"
+                               placeholder="Actividad Económica" maxlength="500">
                     </div>
                     <div class="col-md-4">
-                        <input type="number" th:field="*{ingresosMensuales}" class="form-control" placeholder="Ingresos Mensuales" step="0.01">
+                        <input type="number" th:field="*{monthlyIncome}" class="form-control"
+                               placeholder="Ingresos Mensuales" step="0.01">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <select th:field="*{statusValidity}" class="form-select" aria-label="Estatus Vigencia">
+                            <option value="" disabled selected>Seleccione un estatus</option>
+                            <option value="Activo">Activo</option>
+                            <option value="Baja">Baja</option>
+                            <option value="En espera">En espera</option>
+                            <option value="Desafiliado">Desafiliado</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <select th:field="*{regime}" class="form-select" aria-label="regimen">
+                            <option value="Fisica">Fisica</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <select th:field="*{sex}" class="form-select" aria-label="regimen">
+                            <option value="" disabled selected>Seleccione un sexo</option>
+                            <option value="Femenino">Femenino</option>
+                            <option value="Masculino">Masculino</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <input type="email" th:field="*{correo}" class="form-control" maxlength="60"
+                               placeholder="Email">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" th:field="*{bancarySituation}" class="form-control" maxlength="25"
+                               placeholder="Situacion Bancaria">
+                    </div>
+                    <div class="col-md-4">
+                        <input type="text" th:field="*{comercialName}" class="form-control" maxlength="100"
+                               placeholder="Nombre Comercial">
+                    </div>
+                </div>
+                <h4 class="text-primary">Fechas</h4>
+                <div class="row mb-3">
+                    <div class="col-md-4">
+                        <h6 class="text-primary">Fecha Inicio Operaciones</h6>
+                        <input type="date" th:field="*{dateInicialOperations}" class="form-select"
+                               aria-label="Fecha Inicio Operaciones" placeholder="Seleccione una fecha">
+                    </div>
+                    <div class="col-md-4">
+                        <h6 class="text-primary">Fecha Nacimiento</h6>
+                        <input type="date" th:field="*{dateBirthday}" class="form-select"
+                               aria-label="Fecha Nacimiento" placeholder="Seleccione una fecha">
                     </div>
                 </div>
                 <div class="text-center">
@@ -138,7 +208,7 @@
 
 </div>
 <div class="pie">
-<div th:replace="footer :: footer"></div>
+    <div th:replace="footer :: footer"></div>
 </div>
 </body>
 </html>

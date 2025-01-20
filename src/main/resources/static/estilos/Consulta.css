@@ -60,18 +60,11 @@ th, td {
     
 }
 th {
-    background-color: #1456b3;
+  background: linear-gradient(to bottom, #004a75, #00658b, #007b97, #00a1b3);
     color: white;
 }
 td{
     color: black;
-}
-footer {
-    background-color: #004a75;
-    color: #fff;
-    padding: 10px;
-    font-size: 0.9em;
-    text-align: center;
 }
 .image-text-container {
     display: flex;

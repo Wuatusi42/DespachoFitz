@@ -1,34 +1,53 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
-<link rel="stylesheet" type="text/css" th:href="@{/estilos/Consulta.css}">
 <head>
     <meta charset="UTF-8">
+    <style>
+        .footer-images {
+            display: flex; /* Organiza los elementos en línea */
+            justify-content: center; /* Centra los elementos horizontalmente */
+            gap: 20px; /* Espacio entre los elementos */
+            margin-top: 20px;
+        }
+
+        .image-text-container {
+            display: flex; /* Flex para alinear imagen y texto */
+            flex-direction: column; /* Alinear texto debajo de la imagen */
+            align-items: center; /* Centra la imagen y el texto horizontalmente */
+            text-align: center;
+        }
+
+        .sticker {
+            width: 50px; /* Ajusta el tamaño de las imágenes */
+            height: 50px;
+            margin-bottom: 10px; /* Espacio entre la imagen y el texto */
+        }
+    </style>
 </head>
 <body>
-<div th:fragment="footer" style="background: linear-gradient(to bottom, #004a75, #00658b, #007b97, #00a1b3);
-">
+<div th:fragment="footer" style="background: linear-gradient(to bottom, #004a75, #00658b, #007b97, #00a1b3);">
     <footer class="footer">
         <center><p>© 2024 FITZ & CRUZ, DESPACHO CONTABLE</p></center>
 
-        <!-- Contenedor para las imágenes con texto alineado -->
         <div class="footer-images">
             <div class="image-text-container">
-                <img th:src="@{../img/facebook.png}" alt="Sticker 1" class="sticker">
-                <p class="text">Despacho Fitz & Cruz</p>
+                <img th:src="@{/img/facebook.png}" alt="Facebook" class="sticker">
+                <p>Despacho Fitz & Cruz</p>
             </div>
 
             <div class="image-text-container">
-                <img th:src="@{../img/map.png}" alt="Sticker 2" class="sticker">
-                <p class="text">Miguel Hidalgo #9 Colonia centro Taxco</p>
+                <img th:src="@{/img/map.png}" alt="Ubicación" class="sticker">
+                <p>Miguel Hidalgo #9 Colonia centro Taxco</p>
             </div>
 
             <div class="image-text-container">
-                <img th:src="@{../img/whatsapp.png}" alt="Sticker 3" class="sticker">
-                <p class="text">762-688-1855</p>
+                <img th:src="@{/img/whatsapp.png}" alt="WhatsApp" class="sticker">
+                <p>762-688-1855</p>
             </div>
+
             <div class="image-text-container">
-                <img th:src="@{../img/gmail.png}" alt="Sticker 3" class="sticker">
-                <p class="text">despachofitzcruz@gmail.com</p>
+                <img th:src="@{/img/gmail.png}" alt="Correo" class="sticker">
+                <p>despachofitzcruz@gmail.com</p>
             </div>
         </div>
     </footer>

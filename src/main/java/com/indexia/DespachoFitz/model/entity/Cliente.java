@@ -22,7 +22,7 @@ public class Cliente {
     @Column(name = "apellido_materno")
     private String apellidoMaterno;
     @Column(name = "rfc")
-    private String RFC;
+    private String rfc;
     @Column(name = "fecha_nacimiento")
     private java.sql.Date fechaNacimiento;
     @Column(name = "ciudad")
@@ -119,15 +119,6 @@ public class Cliente {
     public void setApellidoMaterno(String apellidoMaterno) {
         this.apellidoMaterno = apellidoMaterno;
     }
-
-    public String getRFC() {
-        return RFC;
-    }
-
-    public void setRFC(String RFC) {
-        this.RFC = RFC;
-    }
-
 
     public String getCiudad() {
         return Ciudad;
@@ -320,5 +311,13 @@ public class Cliente {
 
     public void setFechaInicioOperaciones(Date fechaInicioOperaciones) {
         this.fechaInicioOperaciones = fechaInicioOperaciones;
+    }
+
+    public String getRfc() {
+        return rfc;
+    }
+
+    public void setRfc(String rfc) {
+        this.rfc = rfc;
     }
 }

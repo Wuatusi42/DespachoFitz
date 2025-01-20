@@ -2,6 +2,7 @@ package com.indexia.DespachoFitz.Controller;
 
 import com.indexia.DespachoFitz.model.entity.Cliente;
 import com.indexia.DespachoFitz.service.ClienteService;
+import com.indexia.DespachoFitz.utils.ClienteResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
@@ -21,7 +22,7 @@ public class RegistroMoralController {
         return "RegistroMoral";
     }
     @PostMapping("/RegistroMoral")
-    public String save(@ModelAttribute Cliente cliente, BindingResult result, Model model) {
+    public String save(@ModelAttribute ClienteResponse cliente, BindingResult result, Model model) {
         if (result.hasErrors()) { // Verifica si hay errores
             model.addAttribute("errorMessage", "No se pudo registrar el cliente. Por favor, verifica los datos."); // Mensaje de error
             return "RegistroMoral"; // Regresa al formulario en caso de error
